@@ -20,5 +20,5 @@ Mezclando de nuevo desde Eclipse
 HOLAAAAAAAA
 =======
 Cambios en playground realizados por Labra en Laboratorio
-Probando
+Probando cambios
 >>>>>>> branch 'master' of https://github.com/Arquisoft/ObservaTerra11.git
