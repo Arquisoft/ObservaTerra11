@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Cambiado desde LineaComandos - Notepad
 Metiendo nueva linea
 Cambiado desde Github
@@ -6,3 +7,18 @@ Mezclado con Eclipse
 Cambiando en Eclipse pasando de GitHub
 Desde Github provocando conflicto con Eclipse
 Mezclando de nuevo desde Eclipse
+=======
+
+Cambiado desde LineaComandos - Notepad
+Metiendo nueva linea
+Cambiado desde Github
+Mezclando Github y Notepad
+Mezclado con Eclipse
+Cambiando en Eclipse pasando de GitHub
+Desde Github provocando conflicto con Eclipse
+Mezclando de nuevo desde Eclipse
+HOLAAAAAAAA
+=======
+Cambios en playground realizados por Labra en Laboratorio
+Probando
+>>>>>>> branch 'master' of https://github.com/Arquisoft/ObservaTerra11.git
