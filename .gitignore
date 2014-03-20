@@ -8,3 +8,9 @@
 .project
 .settings/*
 /target
+
+###########
+# Mac crap
+###########
+
+.DS_Store
