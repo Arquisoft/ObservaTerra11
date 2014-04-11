@@ -1,6 +1,4 @@
-ObservaTerra0
-=============
+ejemploPlay
+===========
 
-ObservaTerra0
-
-
+Ejemplo con Play

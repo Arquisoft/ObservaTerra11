@@ -1,0 +1,16 @@
+@(countries: List[Country], form: Form[Country])
+
+<html>
+<table>
+<tr>
+<th>Id</th>
+<th>Name</th>
+</tr>
+@for(country <- countries) {
+<tr>
+<td>@country.id</td>
+<td>@country.name</td>
+</tr>
+}
+</table>
+</html>
