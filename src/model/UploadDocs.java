@@ -31,6 +31,10 @@ public class UploadDocs implements Serializable {
 	@ManyToOne
 	private AbstractOrganization provider;
 	
+	
+	@ManyToOne
+	private User user;
+	
 	@Temporal(TemporalType.DATE)
 	private Date time;
 
@@ -39,11 +43,12 @@ public class UploadDocs implements Serializable {
 	}
 
 	public UploadDocs(String area, String indicator, String measure,
-			AbstractOrganization provider, Date time) {
+			AbstractOrganization provider,User user, Date time) {
 		this.area = area;
 		this.indicator = indicator;
 		this.measure = measure;
 		this.provider = provider;
+		this.user = user;
 		this.time = time;
 		
 		provider.addUpdoc(this);
@@ -89,4 +94,39 @@ public class UploadDocs implements Serializable {
 		this.time = time;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((indicator == null) ? 0 : indicator.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UploadDocs other = (UploadDocs) obj;
+		if (indicator == null) {
+			if (other.indicator != null)
+				return false;
+		} else if (!indicator.equals(other.indicator))
+			return false;
+		return true;
+	}
+
+	
 }

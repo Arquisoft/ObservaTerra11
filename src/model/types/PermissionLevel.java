@@ -1,5 +1,5 @@
 package model.types;
 
 public enum PermissionLevel {
-	ADMINISTRATOR, BASIC_USER, AUTORICED_USER
+	ADMINISTRATOR, ADMINITRATOR_ONG, ENPLOYEE
 }
