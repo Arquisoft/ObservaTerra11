@@ -1,0 +1,6 @@
+Cambios realizados (15/04/2014)
+Nuevo atributo "activo" en la clase User, lo he introducido por lo que te comente ayer de los conflictos que se podían producir 
+al borrarlo
+
+Actualicé la base de datos con ese campo, y en  la tabla Component, establecí como clave primaria orgHave
+para evitar que una organización pueda ser poseida por varias organizaciones
