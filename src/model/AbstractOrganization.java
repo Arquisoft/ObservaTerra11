@@ -13,6 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import model.Component;
+import model.UploadDocs;
+import model.User;
+
 
 @Entity
 @Table(name = "TORGANIZATION")

@@ -17,14 +17,12 @@ public class Component implements Serializable {
 	private static final long serialVersionUID = 733926216731815257L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@ManyToOne
+	private AbstractOrganization orgHave;
 	
 	@OneToOne
 	private AbstractOrganization orgBelong;
 	
-	@ManyToOne
-	private AbstractOrganization orgHave;
 	
 	public Component() {
 		
@@ -51,13 +49,6 @@ public class Component implements Serializable {
 		this.orgHave = orgHave;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 	
 

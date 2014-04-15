@@ -40,14 +40,18 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user")
 	private Set<UploadDocs> uploadDocs = new HashSet<UploadDocs>();
 
+	private boolean activo;
+	
 	public User() {
 
+		this.activo = true;
 	}
 
 	public User(String login, String password, PermissionLevel permission) {
 		this.login = login;
 		this.password = password;
 		this.permission = permission;
+		this.activo = true;
 	}
 
 	public AbstractOrganization getBelongs() {
@@ -92,6 +96,15 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
+
+	
 	public PermissionLevel getPermission() {
 		return permission;
 	}
