@@ -1,0 +1,35 @@
+@(countries: List[Country], countryForm: Form[Country])
+
+@import play.i18n._
+@import helper._
+
+@main(Messages.get("list.countries")) {
+
+<h1>@Messages.get("countries")</h1>
+<table>
+@for(country <- countries) { 
+  <tr><td>@country.name</td>
+      <td>
+      <td>@helper.form(routes.Admin.deleteCountry(country.code)) {
+               <input type="image" 
+                      src="@{routes.Assets.at("images/delete.gif")}" 
+                      alt='@{Messages.get("delete.country")}'>
+         }
+      </td>
+  </tr>
+   
+}
+</table>
+
+<h2>@{Messages.get("add.country")}</h2>
+    
+	@form(action = routes.Admin.newCountry()) {
+	
+        @inputText(countryForm("code")) 
+        @inputText(countryForm("name")) 
+        
+        <input type="submit" value="@{Messages.get("create")}">
+        
+    }    
+    
+}

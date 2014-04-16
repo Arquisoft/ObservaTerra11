@@ -1,0 +1,14 @@
+.chart  rect {
+  fill: steelblue;
+}
+
+.chart rect:hover {
+  fill: brown;
+}
+
+.chart text {
+  fill: steelblue;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+

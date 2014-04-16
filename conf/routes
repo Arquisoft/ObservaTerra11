@@ -1,0 +1,52 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /              				controllers.Application.index()
+GET		/country					controllers.Application.showCountries()
+GET		/indicator					controllers.Application.showIndicators()
+GET		/observation				controllers.Application.showObservations()
+GET     /bars/:indicator   			controllers.Application.bars(indicator:String)
+
+
+POST	/country					controllers.Admin.newCountry()
+POST	/country/delete/:code         controllers.Admin.deleteCountry(code: String)
+POST	/indicator					controllers.Admin.newIndicator()
+POST	/indicator/delete/:code       controllers.Admin.deleteIndicator(code: String)
+
+
+POST	/observation				controllers.Admin.newObservation()
+POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Long)
+
+# API 
+
+GET		/api/country					controllers.API.countries()
+GET		/api/country/:code				controllers.API.country(code: String)
+PUT		/api/country/:code				controllers.API.updateCountry(code: String)
+POST	/api/country					controllers.API.addCountry()
+DELETE	/api/country/:code				controllers.API.delCountry(code: String)
+
+GET		/api/observation						controllers.API.observations()
+GET		/api/observation/indicator/:indicator	controllers.API.observationsByIndicator(indicator: String)
+GET		/api/observation/country/:country		controllers.API.observationsByCountry(country: String)
+
+POST	/api/observation/:country/:indicator	controllers.API.addObservation(country:String, indicator: String)
+DELETE	/api/observation/:country/:indicator	controllers.API.delObservation(country:String, indicator: String)
+
+POST	/api/excel/upload			controllers.API.uploadExcel()
+
+# API2 showing the concept of HATEOAS
+GET		/api2/country					controllers.API.countriesHATEOAS()
+GET		/api2/country/:code				controllers.API.countryHATEOAS(code: String)
+PUT		/api2/country/:code				controllers.API.updateCountry(code: String)
+POST	/api2/country					controllers.API.addCountry()
+DELETE	/api2/country/:code				controllers.API.delCountry(code: String)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# Ejemplos 
+GET		/proxy						controllers.Pruebas.proxy(url: String)
+GET		/ajax						controllers.Pruebas.ajax()
+GET		/parallel					controllers.Pruebas.parallel()

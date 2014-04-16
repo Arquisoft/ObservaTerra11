@@ -1,0 +1,34 @@
+@(indicators: List[Indicator], form: Form[Indicator])
+
+@import play.i18n._
+
+@main(Messages.get("list.indicators")) {
+
+<h1>@Messages.get("indicators")</h1>
+<table>
+@for(ind <- indicators) { 
+  <tr><td>@ind.name</td>
+      <td>
+      <td>@helper.form(routes.Admin.deleteCountry(ind.code)) {
+               <input type="image" 
+                      src="@{routes.Assets.at("images/delete.gif")}" 
+                      alt='@{Messages.get("delete.indicator")}'>
+         }
+      </td>
+  </tr>
+   
+}
+</table>
+
+<h2>@{Messages.get("add.indicator")}</h2>
+    
+	@helper.form(action = routes.Admin.newIndicator()) {
+	
+	    @helper.inputText(form("code")) 
+	    @helper.inputText(form("name")) 
+        
+        <input type="submit" value="@{Messages.get("create")}">
+        
+    }    
+    
+}

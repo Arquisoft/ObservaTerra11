@@ -1,0 +1,73 @@
+@(observations: List[Observation], 
+  countries: List[Country], 
+  indicators: List[Indicator],
+  form: Form[Observation])
+
+@import play.i18n._
+@import helper.twitterBootstrap._
+
+@main(Messages.get("list.observations")) {
+
+<h1>@Messages.get("observations")</h1>
+
+<table>
+<tr>
+<th>Id</th>
+<th>Country</th>
+<th>Indicator</th>
+<th>Value</th>
+<th>Remove</th>
+</tr>
+@for(obs <- observations) { 
+  <tr>
+  <td>@obs.id</td>
+  <td>@obs.country.name</td>
+  <td>@obs.indicator.name</td>
+  <td>@obs.obsValue</td>
+  <td>@helper.form(routes.Admin.deleteObservation(obs.id)) {
+               <input type="image" 
+                      src="@{routes.Assets.at("images/delete.gif")}" 
+                      alt='@{Messages.get("delete.observation")}'>
+         }
+   </td>
+  </tr>
+   
+}
+</table>
+
+<h2>@{Messages.get("add.observation")}</h2>
+    
+	@helper.form(action = routes.Admin.newObservation()) {
+	
+        @helper.inputText(form("value"))
+
+         <select name="countryId">
+         @for( country <- countries) {
+         	<option value="@country.code">@country.name</option>
+         }
+        </select>
+        
+        <select name="indicatorId">
+         @for( indicator <- indicators) {
+         	<option value="@indicator.code">@indicator.name</option>
+         }
+        </select> 
+
+        <input type="submit" value="@{Messages.get("create")}">
+        
+    }    
+    
+<h2>@Messages.get("upload.excel.file")</h2>
+
+@helper.form(action = routes.API.uploadExcel, 
+	  'enctype -> "multipart/form-data") {
+    
+    <input type="file" name="excel">
+    
+    <p>
+        <input type="submit">
+    </p>
+    
+}
+    
+}
