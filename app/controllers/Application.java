@@ -3,6 +3,7 @@ package controllers;
 import models.Country;
 import models.Indicator;
 import models.Observation;
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -11,6 +12,7 @@ import views.html.country;
 import views.html.index;
 import views.html.indicator;
 import views.html.observation;
+import static play.data.Form.*;
 
 public class Application extends Controller {
 
@@ -37,14 +39,7 @@ public class Application extends Controller {
 	}
 
 	public static Result login() {
-		return ok(login.render());
-	}
-
-	public String validate() {
-		if (User.authenticate(email, password) == null) {
-			return "Invalid user or password";
-		}
-		return null;
+		return ok(login.render(form(Login.class)));
 	}
 
 	static Form<Country> countryForm = Form.form(Country.class);
