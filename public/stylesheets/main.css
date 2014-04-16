@@ -1,0 +1,55 @@
+h1 { color: darkblue; 
+	
+}
+
+header {
+	font-size: 2em;
+}
+
+header img {
+	width: 2em; height: 2em;
+	float: left;
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+}
+
+header img:hover {
+	-webkit-transform: rotate(15deg);
+	transform: rotate(15deg);
+}
+
+header a {
+	text-decoration: none;
+}
+
+
+footer {
+	border-top: 1 solid;
+	background-color: DarkSeaGreen ;
+}
+
+footer nav ul { 
+	list-style-type: none;
+	overflow:hidden;
+}
+
+footer nav li {
+	float:left;
+	padding-left: 1em;
+}
+
+footer nav a {
+	display:block;
+}
+
+table {
+ border: 1px solid;
+ border-collapse: collapse;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 2em; 
+}
+
+td { border-top: 1px solid ; 
+ padding: 0.5em;
+}

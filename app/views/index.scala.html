@@ -1,0 +1,32 @@
+@(observations: List[Observation], countries: List[Country], indicators: List[Indicator])
+
+@import play.i18n._
+
+@main("ObservaTerra") {
+<h1>@Messages.get("Wellcome")</h1>
+<h2>@Messages.get("list.observations")</h2>
+<table>
+<tr>	
+<th>@Messages.get("Country")</th>
+<th>@Messages.get("Indicator")</th>
+<th>@Messages.get("Value")Value</th>
+</tr>
+@for(observation <- observations) {
+	<tr>
+	<td>@observation.country.name</td>
+	<td>@observation.indicator.name</td>
+	<td>@observation.obsValue</td>
+	</tr> 
+}
+</table>
+
+<h2>@Messages.get("Bar.chart")</h2>
+<ul>
+@for(indicator <- indicators) {
+
+ <li><a href="@routes.Application.bars(indicator.code)">@indicator.name</a></li>
+	
+}
+</ul>
+
+}
