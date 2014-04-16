@@ -40,6 +40,16 @@ public class User extends Model {
 			user.save();
 		}
 	}
+	
+	/**
+     * Authenticate a User.
+     */
+    public static User authenticate(String email, String password) {
+        return find.where()
+            .eq("email", email)
+            .eq("password", password)
+            .findUnique();
+    }
 
 	public static void remove(String code) {
 		find.ref(code).delete();

@@ -1,3 +1,5 @@
+package controllers;
+
 import models.Country;
 import models.Indicator;
 import models.Observation;
@@ -10,6 +12,7 @@ import views.html.country;
 import views.html.index;
 import views.html.indicator;
 import views.html.observation;
+import views.html.*;
 import static play.data.Form.*;
 
 public class Application extends Controller {
