@@ -13,6 +13,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 @Entity
 public class User extends Model {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4292000780318727944L;
 	@Id
 	public String code;
 	public String name;
@@ -24,8 +28,8 @@ public class User extends Model {
 		this.name = name;
 	}
 
-	public static Finder<String, User> find = new Finder(String.class,
-			User.class);
+	public static Finder<String, User> find = new Finder<String, User>(
+			String.class, User.class);
 
 	public static List<User> all() {
 		return find.all();
