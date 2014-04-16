@@ -47,3 +47,4 @@ server.pid
 /dist/
 .cache
 /.target
+conf/evolutions/default/1.sql
