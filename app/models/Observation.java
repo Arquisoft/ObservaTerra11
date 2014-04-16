@@ -14,7 +14,12 @@ import play.db.ebean.Model;
 @Entity
 public class Observation extends Model {
     
-  @Id
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8700641721553741260L;
+
+@Id
   public Long id;
   
   @Required
@@ -26,7 +31,7 @@ public class Observation extends Model {
   @ManyToOne
   public Indicator indicator;
   
-  public static Finder<Long,Observation> find = new Finder(Long.class, Observation.class);
+  public static Finder<Long,Observation> find = new Finder<Long, Observation>(Long.class, Observation.class);
 
   public Observation(Country country, Indicator indicator, Double value) {
 	  this.country = country;
