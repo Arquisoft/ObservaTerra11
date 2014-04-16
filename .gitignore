@@ -15,6 +15,17 @@
 
 .DS_Store
 
+##########
+# DB crap
+##########
+
+*.properties
+data/*.lck
+data/*.bck
+data/*.properties
+data/*.log
+*.log
+
 
 #################################
 # Ignore Play! working directory 
