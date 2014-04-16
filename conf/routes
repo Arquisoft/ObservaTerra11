@@ -50,3 +50,5 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET		/proxy						controllers.Pruebas.proxy(url: String)
 GET		/ajax						controllers.Pruebas.ajax()
 GET		/parallel					controllers.Pruebas.parallel()
+
+GET     /login                  controllers.Application.login()
