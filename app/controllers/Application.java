@@ -7,11 +7,6 @@ import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.bars;
-import views.html.country;
-import views.html.index;
-import views.html.indicator;
-import views.html.observation;
 import views.html.*;
 import static play.data.Form.*;
 
