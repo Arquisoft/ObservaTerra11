@@ -48,3 +48,4 @@ server.pid
 .cache
 /.target
 conf/evolutions/default/1.sql
+*.sql
