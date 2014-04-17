@@ -30,7 +30,7 @@ data/*.log
 #################################
 # Ignore Play! working directory 
 #################################
-bin/
+bin/ 
 /db
 .eclipse
 /lib/
