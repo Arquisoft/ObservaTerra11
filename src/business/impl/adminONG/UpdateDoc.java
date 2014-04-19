@@ -19,14 +19,14 @@ public class UpdateDoc implements Command{
 	
 	public Object execute() throws BusinessException
 	{
-		if(doc.getUser().getId() == idAdmin)
+		if(doc.getUser().getId() == idAdmin) //limita la capacidad de borrar a los dueÃ±os (es admin)
 		{
 			Jpa.getManager().merge(doc);
 		}
 		
 		else
 		{
-			throw new BusinessException("No puedes modificar información aportada por otro empleado/administrador");
+			throw new BusinessException("No puedes modificar informaciï¿½n aportada por otro empleado/administrador");
 		}
 		return null;
 	}

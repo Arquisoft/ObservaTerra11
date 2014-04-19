@@ -1,0 +1,30 @@
+package business.impl.adminONG;
+
+import javax.persistence.EntityManager;
+
+import persistence.util.Jpa;
+import model.User;
+import model.exception.BusinessException;
+import business.impl.Command;
+
+public class DeleteUserONG implements Command{
+	private User admin;
+	private User user;
+	
+	public DeleteUserONG(User admin, User newUser) {
+		this.admin = admin;
+		this.user = newUser;
+	}
+	@Override
+	public Object execute() throws BusinessException {
+		
+		EntityManager em  = Jpa.getManager();
+		
+		admin = em.find(User.class, admin.getId());
+		
+		admin.getBelongs().removeBelongs(user);
+		
+		return null;
+	}
+
+}

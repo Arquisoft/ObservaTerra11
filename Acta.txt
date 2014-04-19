@@ -1,10 +1,37 @@
 Cambios realizados (15/04/2014)
-Nuevo atributo "activo" en la clase User, lo he introducido por lo que te comente ayer de los conflictos que se podían producir 
+Nuevo atributo "activo" en la clase User, lo he introducido por lo que te comente ayer de los conflictos que se podï¿½an producir 
 al borrarlo
+-Julio: ok habia puesto el booleano activo en organizacion, no se en que lugar esta mejor, ya lo discutiremos
 
-Actualicé la base de datos con ese campo, y en  la tabla Component, establecí como clave primaria orgHave
-para evitar que una organización pueda ser poseida por varias organizaciones
+Actualicï¿½ la base de datos con ese campo, y en  la tabla Component, establecï¿½ como clave primaria orgHave
+para evitar que una organizaciï¿½n pueda ser poseida por varias organizaciones
 
 Cambios realizados(17/04/2014)
 He empezado a implementar el paqueta business con tres historias de usuario(Actualizar docs, ONG's y Usuarios)
-Tambien he añadido las clases CommandExecutor y Jpa en sus respectivos paquetes para poder llevar a cabo la persistencia
+Tambien he aï¿½adido las clases CommandExecutor y Jpa en sus respectivos paquetes para poder llevar a cabo la persistencia
+
+Cambios realizados (19/04/2014)
+
+-Agregada funcionalidad para:
+
+	incluir documentos de informaciÃ³n, falta incorporar la logica de almacenaje de los ficheros.( empleado, admin ong, admin)
+
+ 	borrar documentos de informaciÃ³n ( empleado, admin ong, admin)
+ 	
+ 	agregar empleados a una organizacion (admin ong, admin)
+ 	
+ 	borrar empleados de una organizacion (admin ong, admin)
+ 	
+ 	agregar ONG (admin)
+ 	
+ 	borrar ONG (admin)
+ 	
+ -Veo la necesidad de crear los listados de informaciÃ³n que se le debe mostrar a cada tipo de usuario, con el fin
+ de que seleccionen la funcionalidad que deseen sobre la ong, usuario, documento que escojan. IntentarÃ© hacer yo uno para empezar.
+ 	
+ -Asumo que agregar fuentes externas de informaciÃ³n se trata de incorporar links a los UploadDocs guardando el string
+ de la URL en el campo indicador.
+ 
+ 
+ 	
+

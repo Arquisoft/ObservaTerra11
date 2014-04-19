@@ -52,6 +52,7 @@ public class UploadDocs implements Serializable {
 		this.time = time;
 		
 		provider.addUpdoc(this);
+		user.addDoc(this);
 	}
 
 	public void setProvider(AbstractOrganization org) {
@@ -100,6 +101,13 @@ public class UploadDocs implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+	public void unlink() {
+		this.user.removeDoc(this);
+		this.user = null;
+		this.provider.removeUpdoc(this);
+		this.provider = null;
 	}
 
 	@Override
