@@ -5,8 +5,10 @@ import model.UploadDocs;
 import model.User;
 import model.exception.BusinessException;
 import business.AdminONGService;
+import business.impl.adminONG.UpdateExternalSource;
 import business.impl.adminONG.UpdateUserONG;
 import business.impl.employee.UpdateDoc;
+import business.impl.generalAdmin.AddExternalSource;
 
 public class AdminONGServiceImpl implements AdminONGService{
 
@@ -23,5 +25,20 @@ public class AdminONGServiceImpl implements AdminONGService{
 	
 		executor.execute(new UpdateDoc(doc, idAdmin));
 	}
+
+	@Override
+	public void addExternalSource(String link, User user) throws BusinessException {
+		
+		executor.execute(new AddExternalSource(link, user));
+		
+	}
+
+	@Override
+	public void updateExternalSource(UploadDocs doc, User user) throws BusinessException {
+		
+		executor.execute(new UpdateExternalSource(doc, user));
+	}
+	
+	
 
 }

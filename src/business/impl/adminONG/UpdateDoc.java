@@ -26,7 +26,7 @@ public class UpdateDoc implements Command{
 		
 		else
 		{
-			throw new BusinessException("No puedes modificar informaci�n aportada por otro empleado/administrador");
+			throw new BusinessException("No puedes eliminar informaci�n aportada por otro empleado/administrador");
 		}
 		return null;
 	}

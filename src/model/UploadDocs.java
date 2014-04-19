@@ -28,6 +28,8 @@ public class UploadDocs implements Serializable {
 	
 	private String measure;
 	
+	private boolean external_sorce;
+	
 	@ManyToOne
 	private AbstractOrganization provider;
 	
@@ -43,13 +45,14 @@ public class UploadDocs implements Serializable {
 	}
 
 	public UploadDocs(String area, String indicator, String measure,
-			AbstractOrganization provider,User user, Date time) {
+			AbstractOrganization provider,User user, Date time, boolean exteralSource) {
 		this.area = area;
 		this.indicator = indicator;
 		this.measure = measure;
 		this.provider = provider;
 		this.user = user;
 		this.time = time;
+		this.external_sorce = exteralSource;
 		
 		provider.addUpdoc(this);
 		user.addDoc(this);
@@ -103,6 +106,15 @@ public class UploadDocs implements Serializable {
 		this.user = user;
 	}
 	
+	
+	public boolean isExternal_sorce() {
+		return external_sorce;
+	}
+
+	public void setExternal_sorce(boolean external_sorce) {
+		this.external_sorce = external_sorce;
+	}
+
 	public void unlink() {
 		this.user.removeDoc(this);
 		this.user = null;

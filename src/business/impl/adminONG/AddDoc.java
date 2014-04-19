@@ -36,7 +36,7 @@ public class AddDoc implements Command {
 		User u = em.find(User.class, user.getId());
 		AbstractOrganization o = em.find(AbstractOrganization.class, provider.getId());
 		
-		em.persist(new UploadDocs(area,indicator,measure,o,u,new Date()));
+		em.persist(new UploadDocs(area,indicator,measure,o,u,new Date(), false));
 		
 		return null;
 	}

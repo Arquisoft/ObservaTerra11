@@ -8,6 +8,7 @@ import model.exception.BusinessException;
 import business.impl.Command;
 
 public class DeleteDoc implements Command {
+	
 	private Long id;
 	
 	public DeleteDoc(Long id) {

@@ -8,6 +8,7 @@ import model.exception.BusinessException;
 import business.impl.Command;
 
 public class AddUserONG implements Command{
+	
 	private User admin;
 	private User newUser;
 	
