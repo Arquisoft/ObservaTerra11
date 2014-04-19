@@ -1,4 +1,4 @@
-Cambios realizados (15/04/2014)
+﻿Cambios realizados (15/04/2014)
 Nuevo atributo "activo" en la clase User, lo he introducido por lo que te comente ayer de los conflictos que se pod�an producir 
 al borrarlo
 -Julio: ok habia puesto el booleano activo en organizacion, no se en que lugar esta mejor, ya lo discutiremos
@@ -32,6 +32,9 @@ Cambios realizados (19/04/2014)
  -Asumo que agregar fuentes externas de información se trata de incorporar links a los UploadDocs guardando el string
  de la URL en el campo indicador.
  
- 
- 	
+ Cambios realizados(19/04/2014)
+Finalizadas las historias de usuario restantes(agregar y modificar fuentes externas) para los 3 tipos de empleados	
+Tal y como dices, añadir un fuente externa es solo añadir un link al campo indicador, pero para poder diferenciar las fuentes externas de lo demás
+añadi un campo "external_source" al modelo y a la base de datos de la tabla UploadDocs, donde mediante un boolean indicaremos con un true si la fila hace referencia a una fuente externa
+Añadi tambien la clase servicesFactory en el paquete conf
 
