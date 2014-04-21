@@ -33,8 +33,8 @@ public class AddDoc implements Command {
 	public Object execute() throws BusinessException {
 		EntityManager em = Jpa.getManager();
 		
-		User u = em.find(User.class, user.getId());
-		AbstractOrganization o = em.find(AbstractOrganization.class, provider.getId());
+		User u = em.merge(user);
+		AbstractOrganization o = em.merge(provider);
 		
 		em.persist(new UploadDocs(area,indicator,measure,o,u,new Date(), false));
 		

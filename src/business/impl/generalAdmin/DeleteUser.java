@@ -20,7 +20,7 @@ public class DeleteUser implements Command{
 		
 		EntityManager em  = Jpa.getManager();
 		
-		user = em.find(User.class, user);
+		user = em.merge(user);
 		
 		AbstractOrganization org = user.getBelongs();
 		

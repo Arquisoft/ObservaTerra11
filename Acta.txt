@@ -38,3 +38,18 @@ Tal y como dices, añadir un fuente externa es solo añadir un link al campo ind
 añadi un campo "external_source" al modelo y a la base de datos de la tabla UploadDocs, donde mediante un boolean indicaremos con un true si la fila hace referencia a una fuente externa
 Añadi tambien la clase servicesFactory en el paquete conf
 
+Cambios realizados (21/04/2014) (actualización rapida julio)
+
+-He modificado la forma de agregar y borrar elementos en la base de datos debido a el cambio de planteamiento
+acerca de como devolver los listados de información.
+
+-Consultas agregadas:
+		consulta de usuario por login con comprobación de password para la funcionalidad de logear un usuario.
+		
+		listado de documentos subidos por un empleado. (empleado, admin ong, admin)
+		
+		listado de organizaciones totales. ( admin)
+
+Acabo de caer en la cuenta de que si varios tipos de usuarios comparten la funcionalidad de actualizar los
+documentos por ejemplo, duplicar la clase en los diferentes paquetes es una tonteria. Opto por dejar tan solo
+una de cada tipo, si es que el usuario que la manipula no tiene ningun tipo de funcionalidad añadida.

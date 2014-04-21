@@ -21,7 +21,7 @@ public class AddUserONG implements Command{
 		
 		EntityManager em  = Jpa.getManager();
 		
-		admin = em.find(User.class, admin.getId());
+		admin = em.merge(admin);
 		
 		admin.getBelongs().addBelongs(newUser);
 		
