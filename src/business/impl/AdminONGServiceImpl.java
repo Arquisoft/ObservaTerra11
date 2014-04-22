@@ -15,15 +15,15 @@ public class AdminONGServiceImpl implements AdminONGService{
 	CommandExecutor executor = new CommandExecutor();
 	
 	@Override
-	public void updateUsersONG(AbstractOrganization adminOrganization, User user) throws BusinessException {
+	public void updateUsersONG(User user) throws BusinessException {
 		
-		executor.execute(new UpdateUserONG(user, adminOrganization));
+		executor.execute(new UpdateUserONG(user));
 	}
 
 	@Override
-	public void updateDocs(UploadDocs doc, Long idAdmin) throws BusinessException {
+	public void updateDocs(UploadDocs doc) throws BusinessException {
 	
-		executor.execute(new UpdateDoc(doc, idAdmin));
+		executor.execute(new UpdateDoc(doc));
 	}
 
 	@Override
@@ -34,9 +34,9 @@ public class AdminONGServiceImpl implements AdminONGService{
 	}
 
 	@Override
-	public void updateExternalSource(UploadDocs doc, User user) throws BusinessException {
+	public void updateExternalSource(UploadDocs doc) throws BusinessException {
 		
-		executor.execute(new UpdateExternalSource(doc, user));
+		executor.execute(new UpdateExternalSource(doc));
 	}
 	
 	

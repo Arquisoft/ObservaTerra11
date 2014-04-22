@@ -11,13 +11,12 @@ import business.impl.Command;
 public class UpdateExternalSource implements Command{
 	
 	private UploadDocs doc;
-	User user;
+	
 	
 
-	public UpdateExternalSource(UploadDocs doc, User user) {
+	public UpdateExternalSource(UploadDocs doc) {
 		
 		this.doc = doc;
-		this.user = user;
 		
 	}
 
@@ -26,15 +25,8 @@ public class UpdateExternalSource implements Command{
 		
 		EntityManager em = Jpa.getManager();
 		
-		if(doc.getUser().getId() == user.getId())
-		{
-			em.merge(doc);
-		}
+		em.merge(doc);
 		
-		else
-		{
-			throw new BusinessException("No se puede modificar una fuente externa de otro empleado/administrador");
-		}
 		return null;
 	}
 

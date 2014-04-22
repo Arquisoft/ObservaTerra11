@@ -14,9 +14,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	CommandExecutor executor = new CommandExecutor();
 	
 	@Override
-	public void updateDocs(UploadDocs doc, Long idEmployed) throws BusinessException {
+	public void updateDocs(UploadDocs doc) throws BusinessException {
 		
-		executor.execute(new UpdateDoc(doc, idEmployed));
+		executor.execute(new UpdateDoc(doc));
 	}
 
 	@Override
@@ -26,9 +26,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public void updateExternalSource(UploadDocs doc, User user) throws BusinessException {
+	public void updateExternalSource(UploadDocs doc) throws BusinessException {
 		
-		executor.execute(new UpdateExternalSource(doc, user));
+		executor.execute(new UpdateExternalSource(doc));
 	}
 
 

@@ -24,9 +24,9 @@ public class GeneralAdminServiceImpl implements GeneralAdminService{
 	}
 
 	@Override
-	public void updateDocs(UploadDocs doc, Long idAdmin) throws BusinessException {
+	public void updateDocs(UploadDocs doc) throws BusinessException {
 		
-		executor.execute(new UpdateDoc(doc, idAdmin));
+		executor.execute(new UpdateDoc(doc));
 		
 	}
 
@@ -37,9 +37,9 @@ public class GeneralAdminServiceImpl implements GeneralAdminService{
 	}
 
 	@Override
-	public void updateExternalSource(UploadDocs doc, User user) throws BusinessException {
+	public void updateExternalSource(UploadDocs doc) throws BusinessException {
 		
-		executor.execute(new UpdateExternalSource(doc, user));
+		executor.execute(new UpdateExternalSource(doc));
 	}
 	
 	

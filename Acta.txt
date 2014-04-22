@@ -53,3 +53,12 @@ acerca de como devolver los listados de información.
 Acabo de caer en la cuenta de que si varios tipos de usuarios comparten la funcionalidad de actualizar los
 documentos por ejemplo, duplicar la clase en los diferentes paquetes es una tonteria. Opto por dejar tan solo
 una de cada tipo, si es que el usuario que la manipula no tiene ningun tipo de funcionalidad añadida.
+
+-Cambios realizados (22/04/2014)
+
+Tal y como hablamos he eliminado todas las comprobaciones que hacia a la hora de realizar modificaciones
+He creado la consulta de listar usuarios por ONG necesaria para saber que usuarios puede modificar los administradoresONG
+He reutilizado una de tus consultas para crear otra clase listado dentro del paquete adminONG
+
+Tienes razon, en varios paquetes vamos a tener la misma clase, y podíamos reutilizar codigo. De todas formas ya sabes que se tiene en cuenta la cantidad de codigo que hagamos e igual era interesante dejarlo, pero
+la verdad que no te falta razon en que vamos a tener codigo igual en varios sitios, así que, si quieres creamos un paquete y metemos hay las clases que podamos reutilizar.

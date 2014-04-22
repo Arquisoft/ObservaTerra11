@@ -19,6 +19,14 @@
 		</query>
 	</named-query>
 	
+<!--  AdminONG queries -->	
+	<named-query name="User.listUpdateUsers">
+		<query>
+		select u from User u where u.organization = ?1
+		</query>
+	</named-query>
+
+	
 	
 	<!-- General queries --> 
 	<named-query name="general.findUserLogin">
