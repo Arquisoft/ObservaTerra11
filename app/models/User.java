@@ -27,6 +27,13 @@ public class User extends Model {
 		this.code = code;
 		this.name = name;
 	}
+	
+	public User(String code, String name,String email, String password){
+		this.code = code;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+	}
 
 	public static Finder<String, User> find = new Finder<String, User>(
 			String.class, User.class);
@@ -70,5 +77,10 @@ public class User extends Model {
 
 	public static JsonNode toJson(User country) {
 		return Json.toJson(country);
+	}
+
+	public static User save(String code, String name, String email,
+			String password) {
+		return new User(code,name,email,password);
 	}
 }

@@ -51,5 +51,10 @@ GET		/proxy						controllers.Pruebas.proxy(url: String)
 GET		/ajax						controllers.Pruebas.ajax()
 GET		/parallel					controllers.Pruebas.parallel()
 
+# Login
 POST    /login                      controllers.Application.authenticate()
-GET     /login                  controllers.Application.login()
+GET     /login          	        controllers.Application.login()
+
+# Signup
+POST    /signup                     controllers.Register.saveUser()
+GET     /signup                     controllers.Register.signUp()
