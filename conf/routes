@@ -52,8 +52,8 @@ GET		/ajax						controllers.Pruebas.ajax()
 GET		/parallel					controllers.Pruebas.parallel()
 
 # Login
-POST    /login                      controllers.Application.authenticate()
-GET     /login          	        controllers.Application.login()
+POST    /login                      controllers.Login.authenticate()
+GET     /login          	        controllers.Login.login()
 
 # Signup
 POST    /signup                     controllers.Register.saveUser()
