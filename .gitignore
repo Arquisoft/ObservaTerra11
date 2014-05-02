@@ -46,3 +46,6 @@ server.pid
 *.eml
 /dist/
 .cache
+/.target
+conf/evolutions/default/1.sql
+*.sql

@@ -23,11 +23,21 @@ create table observation (
   constraint pk_observation primary key (id))
 ;
 
+create table user (
+  code                      varchar(255) not null,
+  name                      varchar(255),
+  email                     varchar(255),
+  password                  varchar(255),
+  constraint pk_user primary key (code))
+;
+
 create sequence country_seq;
 
 create sequence indicator_seq;
 
 create sequence observation_seq;
+
+create sequence user_seq;
 
 alter table observation add constraint fk_observation_country_1 foreign key (country_code) references country (code) on delete restrict on update restrict;
 create index ix_observation_country_1 on observation (country_code);
@@ -46,6 +56,8 @@ drop table if exists indicator;
 
 drop table if exists observation;
 
+drop table if exists user;
+
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists country_seq;
@@ -53,4 +65,6 @@ drop sequence if exists country_seq;
 drop sequence if exists indicator_seq;
 
 drop sequence if exists observation_seq;
+
+drop sequence if exists user_seq;
 
