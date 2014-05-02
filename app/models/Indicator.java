@@ -11,12 +11,7 @@ import javax.persistence.*;
 @Entity
 public class Indicator extends Model {
     
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = -1586306213390276144L;
-
-@Id
+  @Id
   public String code;
   
   @Required
@@ -27,7 +22,7 @@ public class Indicator extends Model {
 	  this.name = name;
   }
    
-  public static Finder<String,Indicator> find = new Finder<String, Indicator>(String.class, Indicator.class);
+  public static Finder<String,Indicator> find = new Finder(String.class, Indicator.class);
   
   public static List<Indicator> all() {
     return find.all();
