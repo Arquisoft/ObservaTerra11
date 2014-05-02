@@ -1,11 +1,11 @@
 package controllers;
 
 import static play.data.Form.form;
-import models.User;
+import models.UserLabra;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.login;
 
 public class Login extends Controller {
 	
@@ -13,7 +13,7 @@ public class Login extends Controller {
 	public String password;
 
 	public String validate() {
-		if (User.authenticate(email, password) == null) {
+		if (UserLabra.authenticate(email, password) == null) {
 			return "Invalid user or password";
 		}
 		return null;

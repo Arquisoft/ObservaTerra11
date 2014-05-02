@@ -1,7 +1,7 @@
 package controllers;
 
 import static play.data.Form.form;
-import models.User;
+import models.UserLabra;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -16,11 +16,11 @@ public class Register extends Controller {
 	public String repeatPassword;
 
 	public String validate() {
-		User user;
+		UserLabra user; //este usuario deberia ser User que es el del modelo de NUESTRA bd
 		if(!checkPasswords()){
 			return "password NOOOOO :(";
 		}
-		if ((user = User.save(code, name,email,password)) == null) {
+		if ((user = UserLabra.save(code, name,email,password)) == null) {
 			return "THINGS WENT WRONG! :(";
 		}
 		return user.toString();
