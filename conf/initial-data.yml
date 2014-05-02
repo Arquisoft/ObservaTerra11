@@ -29,3 +29,13 @@ indicators:
     - !!models.Indicator
         code: wi
         name: WebIndex
+        
+# User
+
+users:
+
+    - !!models.User
+        code: 1
+        name: Test
+        email: qwe@qwe.qwe
+        password: password
