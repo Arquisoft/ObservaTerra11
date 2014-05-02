@@ -9,7 +9,7 @@
 <tr>	
 <th>@Messages.get("Country")</th>
 <th>@Messages.get("Indicator")</th>
-<th>@Messages.get("Value")</th>
+<th>@Messages.get("Value")Value</th>
 </tr>
 @for(observation <- observations) {
 	<tr>
@@ -23,9 +23,7 @@
 <h2>@Messages.get("Bar.chart")</h2>
 <ul>
 @for(indicator <- indicators) {
-
  <li><a href="@routes.Application.bars(indicator.code)">@indicator.name</a></li>
-	
 }
 </ul>
 
