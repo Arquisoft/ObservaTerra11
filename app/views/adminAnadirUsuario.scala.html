@@ -1,14 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-<title>Cabecera</title> 
-</h:head>
-<h:body>
+@(title: String)(content: Html)
 
-<!-- Aquí va tu código -->
+@import play.i18n._
 
-</h:body>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <header>
+        <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
+        <h1>ObservaTerra</h1></a>
+     </header>
+     <h1>@title</h1>    
+
+     @content
+
+        @helper.form(routes.Register.saveUser) {
+            <h1>Sign up</h1>
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            <p>
+                <input type="text" name="code" placeholder="Code" value="@form("code").value">
+            </p>
+             <p>
+                <input type="text" name="name" placeholder="Name" value="@form("name").value">
+            </p>
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@form("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password">
+            </p>
+            
+            <p>
+                <input type="password" name="repeatPassword" placeholder="Repeat Password">
+            </p>
+            <p>
+                <button type="submit">Crear usuario</button>
+            </p>
+
+        }
+    </body>
 </html>
