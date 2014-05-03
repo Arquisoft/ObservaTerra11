@@ -21,8 +21,8 @@
 
      @content
 
-        @helper.form(routes.Register.saveUser) {
-            <h1>Añadir nuevo usuario</h1>
+        @helper.form(routes.Ong.AddUser) {
+            <h1>Añadir usuario a tu ONG (debe estar previamente registrado)</h1>
             
             @if(form.hasGlobalErrors) { 
                 <p class="error">
@@ -36,23 +36,11 @@
                 </p>
             }
             <p>
-                <input type="text" name="code" placeholder="Code" value="@form("code").value">
+                <input type="text" name="nombre" placeholder="Nombre" value="@form("nombre").value">
             </p>
-             <p>
-                <input type="text" name="name" placeholder="Name" value="@form("name").value">
-            </p>
+
             <p>
-                <input type="email" name="email" placeholder="Email" value="@form("email").value">
-            </p>
-            <p>
-                <input type="password" name="password" placeholder="Password">
-            </p>
-            
-            <p>
-                <input type="password" name="repeatPassword" placeholder="Repeat Password">
-            </p>
-            <p>
-                <button type="submit">Crear usuario</button>
+                <button type="submit">Añadir usuario</button>
             </p>
 
         }
