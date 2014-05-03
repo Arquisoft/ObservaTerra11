@@ -2,11 +2,12 @@ package business.impl;
 
 import model.User;
 import model.exception.BusinessException;
+import business.GeneralService;
 import business.impl.general.LogedUser;
 
 
 
-public class GeneralServiceImpl {
+public class GeneralServiceImpl implements GeneralService {
 	CommandExecutor executor = new CommandExecutor();
 	
 
