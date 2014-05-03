@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import model.Country;
+import model.Indicator;
+import model.Observation;
 import models.*;
 import views.html.*;
-
 import play.Logger;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -20,23 +22,23 @@ import utils.ExcelReader;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render(Observation.all(),Country.all(),Indicator.all()));
+        return ok("index");
     }
 
     public static Result showCountries() {
-    	return ok(country.render(Country.all(),countryForm));
+    	return ok("showCountries");
     }
     
     public static Result showIndicators() {
-    	return ok(indicator.render(Indicator.all(),indicatorForm));
+    	return ok("showIndicators");
     }
     
     public static Result showObservations() {
-    	return ok(observation.render(Observation.find.all(),Country.all(),Indicator.all(),observationForm));
+    	return ok("showObservation");
     }
     
     public static Result bars(String indicator) {
-    	return ok(bars.render(Indicator.findByCode(indicator)));
+    	return ok("bars");
     }
 
     static Form<Country>  	  countryForm     = Form.form(Country.class);

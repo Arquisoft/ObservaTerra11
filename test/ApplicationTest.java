@@ -8,9 +8,9 @@ import static play.test.Helpers.inMemoryDatabase;
 import java.util.Collections;
 import java.util.Map;
 
-import models.Country;
-import models.Indicator;
-import models.Observation;
+import model.Country;
+import model.Indicator;
+import model.Observation;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,8 +44,7 @@ public class ApplicationTest extends WithApplication {
 
 	@Test
 	public void renderIndex() {
-		Content html = views.html.index.render(Observation.all(),
-				Country.all(), Indicator.all());
+		Content html = views.html.index.render();
 		assertThat(contentType(html)).isEqualTo("text/html");
 		assertThat(contentAsString(html)).contains("ObservaTerra");
 	}
