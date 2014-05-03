@@ -2,7 +2,7 @@ package business.impl.generalAdmin;
 
 import business.impl.Command;
 import persistence.util.Jpa;
-import models.AbstractOrganization;
+import model.AbstractOrganization;
 
 public class UpdateONG implements Command{
 

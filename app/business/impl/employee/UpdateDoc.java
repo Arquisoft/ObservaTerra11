@@ -1,8 +1,8 @@
 package business.impl.employee;
 
 import business.impl.Command;
-import models.UploadDocs;
-import models.exception.BusinessException;
+import model.UploadDocs;
+import model.exception.BusinessException;
 import persistence.util.Jpa;
 
 public class UpdateDoc implements Command{

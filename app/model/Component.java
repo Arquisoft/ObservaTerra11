@@ -1,4 +1,4 @@
-package models;
+package model;
 
 import java.io.Serializable;
 
@@ -46,8 +46,4 @@ public class Component implements Serializable {
 	public void setOrgHave(AbstractOrganization orgHave) {
 		this.orgHave = orgHave;
 	}
-
-	
-	
-
 }
