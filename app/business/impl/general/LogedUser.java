@@ -1,5 +1,8 @@
 package business.impl.general;
 
+
+import persistence.GeneralFinder;
+
 import models.exception.BusinessException;
 import business.impl.Command;
 
@@ -14,6 +17,7 @@ public class LogedUser implements Command {
 
 	@Override
 	public Object execute() throws BusinessException {
+
 
 		// User user = (User) GeneralFinder.findUserByLogin(login);
 

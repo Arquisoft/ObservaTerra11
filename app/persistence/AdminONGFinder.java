@@ -17,5 +17,6 @@ public class AdminONGFinder {
 //		
 //		return Jpa.getManager().createNamedQuery("User.listUpdateUsers").setParameter(1, user.getBelongs()).getResultList();
 //	}
+
 	
 }

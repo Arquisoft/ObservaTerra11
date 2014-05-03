@@ -13,11 +13,13 @@ public class AddUser implements Command{
 //	public AddUser( User newUser) {
 //		this.newUser = newUser;
 //	}
+
 	@Override
 	public Object execute() throws BusinessException {
 		
 		EntityManager em  = Jpa.getManager();
 		
+
 		//		em.persist(newUser);
 		
 		return null;

@@ -2,6 +2,7 @@ package business.impl.adminONG;
 
 import javax.persistence.EntityManager;
 
+
 import models.exception.BusinessException;
 import persistence.util.Jpa;
 import business.impl.Command;
@@ -23,7 +24,6 @@ public class AddUserONG implements Command {
 		// admin = em.merge(admin);
 
 		// admin.getBelongs().addBelongs(newUser);
-
 		return null;
 	}
 

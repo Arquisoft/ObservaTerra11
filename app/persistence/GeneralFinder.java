@@ -8,4 +8,5 @@ public class GeneralFinder {
 	// .setParameter(1, login).getSingleResult();
 	// }
 
+
 }
