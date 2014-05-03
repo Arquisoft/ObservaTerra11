@@ -85,7 +85,7 @@ public class AdminONGServiceImpl implements AdminONGService {
 	@Override
 	public void ListUploadUsers(User user) throws BusinessException {
 
-		executor.execute(new ListUploadDocs(user));
+		executor.execute(new ListUploadUsers(user));
 	}
 
 }

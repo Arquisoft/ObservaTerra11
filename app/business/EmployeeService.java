@@ -1,5 +1,8 @@
 package business;
 
+import java.util.Date;
+
+import model.AbstractOrganization;
 import model.UploadDocs;
 import model.User;
 import model.exception.BusinessException;
@@ -12,4 +15,12 @@ public interface EmployeeService {
 			throws BusinessException;
 
 	public void updateExternalSource(UploadDocs doc) throws BusinessException;
+
+	public void addDoc(String area, String indicator, String measure,
+			AbstractOrganization provider, User user, Date time)
+			throws BusinessException;
+
+	public void deleteDoc(Long id) throws BusinessException;
+
+	public void ListUploadDocs(User user) throws BusinessException;
 }
