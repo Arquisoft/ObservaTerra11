@@ -1,4 +1,4 @@
-package models;
+package model;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -35,8 +35,8 @@ public class AbstractOrganization implements Serializable {
 	@OneToMany(mappedBy = "orgHave")
 	private Set<Component> orgHave = new HashSet<Component>();
 
-//	@OneToMany(mappedBy = "organization")
-//	private Set<User> users;
+	@OneToMany(mappedBy = "organization")
+	private Set<User> users;
 
 
 	@OneToMany(mappedBy = "provider")
@@ -60,23 +60,23 @@ public class AbstractOrganization implements Serializable {
 	}
 
 
-	// public Set<User> getBelongs() {
-	// return Collections.unmodifiableSet(users);
-	// }
-	//
-	// protected Set<User> _getBelongs() {
-	// return users;
-	// }
-	//
-	// public void addBelongs(User user) {
-	// user.setBelong(this);
-	// this.users.add(user);
-	// }
-	//
-	// public void removeBelongs(User belongs) {
-	// this.users.remove(belongs);
-	// belongs.setBelong(null);
-	// }
+	 public Set<User> getBelongs() {
+	 return Collections.unmodifiableSet(users);
+	 }
+	
+	 protected Set<User> _getBelongs() {
+	 return users;
+	 }
+	
+	 public void addBelongs(User user) {
+	 user.setBelong(this);
+	 this.users.add(user);
+	 }
+	
+	 public void removeBelongs(User belongs) {
+	 this.users.remove(belongs);
+	 belongs.setBelong(null);
+	 }
 
 
 	public Component getOrgBelong() {

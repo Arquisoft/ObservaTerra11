@@ -1,4 +1,4 @@
-package models;
+package model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -35,7 +35,7 @@ public class UploadDocs implements Serializable {
 	private AbstractOrganization provider;
 
 	@ManyToOne
-	// private User user;
+	 private User user;
 
 	@Temporal(TemporalType.DATE)
 	private Date time;
@@ -44,20 +44,20 @@ public class UploadDocs implements Serializable {
 
 	}
 
-	// public UploadDocs(String area, String indicator, String measure,
-	// AbstractOrganization provider,User user, Date time, boolean
-	// exteralSource) {
-	// this.area = area;
-	// this.indicator = indicator;
-	// this.measure = measure;
-	// this.provider = provider;
-	// this.user = user;
-	// this.time = time;
-	// this.external_sorce = exteralSource;
-	//
-	// provider.addUpdoc(this);
-	// user.addDoc(this);
-	// }
+	 public UploadDocs(String area, String indicator, String measure,
+	 AbstractOrganization provider,User user, Date time, boolean
+	 exteralSource) {
+	 this.area = area;
+	 this.indicator = indicator;
+	 this.measure = measure;
+	 this.provider = provider;
+	 this.user = user;
+	 this.time = time;
+	 this.external_sorce = exteralSource;
+	
+	 provider.addUpdoc(this);
+	 user.addDoc(this);
+	 }
 
 	public void setProvider(AbstractOrganization org) {
 		this.provider = org;
@@ -101,13 +101,13 @@ public class UploadDocs implements Serializable {
 	}
 
 
-	// public User getUser() {
-	// return user;
-	// }
-	//
-	// public void setUser(User user) {
-	// this.user = user;
-	// }
+	 public User getUser() {
+	 return user;
+	 }
+	
+	 public void setUser(User user) {
+	 this.user = user;
+	 }
 
 
 	public boolean isExternal_sorce() {
@@ -120,8 +120,8 @@ public class UploadDocs implements Serializable {
 
 	public void unlink() {
 
-		// this.user.removeDoc(this);
-		// this.user = null;
+		 this.user.removeDoc(this);
+		 this.user = null;
 
 		this.provider.removeUpdoc(this);
 		this.provider = null;

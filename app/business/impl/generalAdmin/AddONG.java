@@ -1,8 +1,8 @@
 package business.impl.generalAdmin;
 
 import persistence.util.Jpa;
-import models.AbstractOrganization;
-import models.exception.BusinessException;
+import model.AbstractOrganization;
+import model.exception.BusinessException;
 import business.impl.Command;
 
 public class AddONG implements Command {
