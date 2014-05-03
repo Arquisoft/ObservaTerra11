@@ -16,8 +16,7 @@ public class AddExternalSource extends Controller {
 
 	public String get() {
 		try {
-			ServicesFactory.getGeneralAdminService().addExternalSource(link,
-					user);
+			ServicesFactory.getAdminAdminONGService().addExternalSource(link, user);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();

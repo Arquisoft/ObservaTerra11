@@ -15,7 +15,7 @@ public class UpdateExternalSource extends Controller {
 
 	public String get() {
 		try {
-			ServicesFactory.getGeneralAdminService().updateExternalSource(doc);
+			ServicesFactory.getAdminAdminONGService().updateExternalSource(doc);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();
