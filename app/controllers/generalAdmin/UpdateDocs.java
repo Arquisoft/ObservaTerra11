@@ -22,16 +22,12 @@ public class UpdateDocs extends Controller {
 		}
 	}
 
-	public static Result updateONG() {
+	public static Result updateDocs() {
 		return ok();
 	}
 
-	/**
-	 * Handle login form submission.
-	 */
 	public static Result post() {
-		Form<UpdateExternalSource> form = form(UpdateExternalSource.class)
-				.bindFromRequest();
+		Form<UpdateDocs> form = form(UpdateDocs.class).bindFromRequest();
 		if (form.hasErrors()) {
 			return badRequest();
 		} else {

@@ -26,9 +26,6 @@ public class UpdateONG extends Controller {
 		return ok();
 	}
 
-	/**
-	 * Handle login form submission.
-	 */
 	public static Result post() {
 		Form<UpdateONG> updateONGForm = form(UpdateONG.class).bindFromRequest();
 		if (updateONGForm.hasErrors()) {
