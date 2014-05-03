@@ -16,6 +16,7 @@ import javax.persistence.TemporalType;
 @Table(name = "TDOCUMENTS")
 public class UploadDocs implements Serializable {
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -35,6 +36,7 @@ public class UploadDocs implements Serializable {
 
 	@ManyToOne
 	// private User user;
+
 	@Temporal(TemporalType.DATE)
 	private Date time;
 
@@ -60,6 +62,7 @@ public class UploadDocs implements Serializable {
 	public void setProvider(AbstractOrganization org) {
 		this.provider = org;
 	}
+
 
 	public AbstractOrganization getProvider() {
 		return provider;
@@ -97,6 +100,7 @@ public class UploadDocs implements Serializable {
 		this.time = time;
 	}
 
+
 	// public User getUser() {
 	// return user;
 	// }
@@ -104,6 +108,7 @@ public class UploadDocs implements Serializable {
 	// public void setUser(User user) {
 	// this.user = user;
 	// }
+
 
 	public boolean isExternal_sorce() {
 		return external_sorce;
@@ -114,8 +119,10 @@ public class UploadDocs implements Serializable {
 	}
 
 	public void unlink() {
+
 		// this.user.removeDoc(this);
 		// this.user = null;
+
 		this.provider.removeUpdoc(this);
 		this.provider = null;
 	}

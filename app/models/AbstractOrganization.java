@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table(name = "TORGANIZATION")
 public class AbstractOrganization implements Serializable {
@@ -37,6 +38,7 @@ public class AbstractOrganization implements Serializable {
 //	@OneToMany(mappedBy = "organization")
 //	private Set<User> users;
 
+
 	@OneToMany(mappedBy = "provider")
 	private Set<UploadDocs> upDocs = new HashSet<UploadDocs>();
 
@@ -57,6 +59,7 @@ public class AbstractOrganization implements Serializable {
 		this.name = name;
 	}
 
+
 	// public Set<User> getBelongs() {
 	// return Collections.unmodifiableSet(users);
 	// }
@@ -74,6 +77,7 @@ public class AbstractOrganization implements Serializable {
 	// this.users.remove(belongs);
 	// belongs.setBelong(null);
 	// }
+
 
 	public Component getOrgBelong() {
 		return orgBelong;

@@ -2,6 +2,7 @@ package business.impl;
 
 import models.AbstractOrganization;
 import models.UploadDocs;
+
 import models.exception.BusinessException;
 import business.GeneralAdminService;
 import business.impl.employee.UpdateDoc;
@@ -18,10 +19,12 @@ public class GeneralAdminServiceImpl implements GeneralAdminService {
 
 		executor.execute(new UpdateONG(organization));
 
+
 	}
 
 	@Override
 	public void updateDocs(UploadDocs doc) throws BusinessException {
+
 
 		executor.execute(new UpdateDoc(doc));
 
@@ -39,5 +42,6 @@ public class GeneralAdminServiceImpl implements GeneralAdminService {
 
 		executor.execute(new UpdateExternalSource(doc));
 	}
+
 
 }

@@ -1,5 +1,6 @@
 package business.impl.generalAdmin;
 
+
 import javax.persistence.EntityManager;
 
 import models.AbstractOrganization;
@@ -10,10 +11,12 @@ import business.impl.Command;
 public class AddDoc implements Command {
 
 	// private User user;
+
 	private AbstractOrganization provider;
 	private String measure;
 	private String indicator;
 	private String area;
+
 
 	// aqui pondríamos la logica para almacenar los ficheros que se subieron.
 	// public AddDoc(String area, String indicator, String measure,
@@ -28,6 +31,7 @@ public class AddDoc implements Command {
 	@Override
 	public Object execute() throws BusinessException {
 		EntityManager em = Jpa.getManager();
+
 
 		// User u = em.merge(user);
 		AbstractOrganization o = em.merge(provider);

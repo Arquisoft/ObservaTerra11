@@ -21,6 +21,7 @@ public class DeleteONG implements Command {
 		
 		org = em.find(AbstractOrganization.class, org);
 		
+
 //		if(org.getBelongs().isEmpty() && org.getOrgHave().isEmpty() && org.getOrgBelong() == null)
 //			em.remove(org);
 //		else
