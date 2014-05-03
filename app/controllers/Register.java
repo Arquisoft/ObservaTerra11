@@ -24,8 +24,8 @@ public class Register extends Controller {
 			return "THINGS WENT WRONG! :(";
 		}
 		return user.toString();
-//		Esto es para hacerlo bien xD
-//		return null;
+/*		Esto es para hacerlo bien xD
+		return null; */
 	}
 	
 	public static Result signUp() {

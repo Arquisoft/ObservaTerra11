@@ -1,22 +1,25 @@
 package controllers;
 
 import static play.data.Form.form;
-import model.UserLabra;
+import model.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.login;
+import conf.ServicesFactory;
 
 public class Login extends Controller {
 	
-	public String email;
+	public String loginString;
 	public String password;
 
 	public String validate() {
-		if (UserLabra.authenticate(email, password) == null) {
-			return "Invalid user or password";
+		try {
+			ServicesFactory.getGenealServiceImpl().getLogedUser(loginString, password);
+			return null;
+		} catch (BusinessException e) {
+			return e.getMessage();
 		}
-		return null;
 	}
 	
 	public static Result login() {
@@ -32,7 +35,7 @@ public class Login extends Controller {
 			return badRequest(login.render(loginForm));
 		} else {
 			//TODO
-			session("email", loginForm.get().email);
+			session("login", loginForm.get().loginString);
 			return redirect(routes.Application.index());
 		}
 	}
