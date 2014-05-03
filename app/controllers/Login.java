@@ -15,7 +15,7 @@ public class Login extends Controller {
 
 	public String validate() {
 		try {
-			ServicesFactory.getGenealServiceImpl().getLogedUser(loginString, password);
+			ServicesFactory.getGeneralService().getLogedUser(loginString, password);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();

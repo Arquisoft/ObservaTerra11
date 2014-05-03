@@ -27,7 +27,7 @@ public class ServicesFactory {
 		return new GeneralAdminServiceImpl();
 	}
 	
-	public static GeneralService getGenealServiceImpl(){
+	public static GeneralService getGeneralService(){
 		return new GeneralServiceImpl();
 	}
 }
