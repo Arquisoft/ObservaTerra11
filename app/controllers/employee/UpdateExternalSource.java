@@ -15,7 +15,7 @@ public class UpdateExternalSource extends Controller {
 
 	public String get() {
 		try {
-			ServicesFactory.getGeneralAdminService().updateExternalSource(doc);
+			ServicesFactory.getEmployeeService().updateExternalSource(doc);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();
@@ -26,7 +26,6 @@ public class UpdateExternalSource extends Controller {
 		return ok();
 	}
 
-	
 	public static Result post() {
 		Form<UpdateExternalSource> form = form(UpdateExternalSource.class)
 				.bindFromRequest();

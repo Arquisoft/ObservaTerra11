@@ -1,7 +1,7 @@
 package controllers.employee;
 
 import static play.data.Form.form;
-import model.User;
+import model.UploadDocs;
 import model.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
@@ -11,13 +11,11 @@ import controllers.routes;
 
 public class UpdateDocs extends Controller {
 
-	private String link;
-	private User user;
+	private UploadDocs doc;
 
 	public String get() {
 		try {
-			ServicesFactory.getGeneralAdminService().addExternalSource(link,
-					user);
+			ServicesFactory.getEmployeeService().updateDocs(doc);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();
@@ -29,8 +27,7 @@ public class UpdateDocs extends Controller {
 	}
 
 	public static Result post() {
-		Form<UpdateDocs> form = form(UpdateDocs.class)
-				.bindFromRequest();
+		Form<UpdateDocs> form = form(UpdateDocs.class).bindFromRequest();
 		if (form.hasErrors()) {
 			return badRequest();
 		} else {
