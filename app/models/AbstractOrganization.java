@@ -13,9 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import models.Component;
-import models.UploadDocs;
-import models.User;
 
 
 @Entity
@@ -38,8 +35,9 @@ public class AbstractOrganization implements Serializable {
 	@OneToMany(mappedBy = "orgHave")
 	private Set<Component> orgHave = new HashSet<Component>();
 
-	@OneToMany(mappedBy = "organization")
-	private Set<User> users;
+//	@OneToMany(mappedBy = "organization")
+//	private Set<User> users;
+
 
 	@OneToMany(mappedBy = "provider")
 	private Set<UploadDocs> upDocs = new HashSet<UploadDocs>();
@@ -61,23 +59,25 @@ public class AbstractOrganization implements Serializable {
 		this.name = name;
 	}
 
-	public Set<User> getBelongs() {
-		return Collections.unmodifiableSet(users);
-	}
 
-	protected Set<User> _getBelongs() {
-		return users;
-	}
+	// public Set<User> getBelongs() {
+	// return Collections.unmodifiableSet(users);
+	// }
+	//
+	// protected Set<User> _getBelongs() {
+	// return users;
+	// }
+	//
+	// public void addBelongs(User user) {
+	// user.setBelong(this);
+	// this.users.add(user);
+	// }
+	//
+	// public void removeBelongs(User belongs) {
+	// this.users.remove(belongs);
+	// belongs.setBelong(null);
+	// }
 
-	public void addBelongs(User user) {
-		user.setBelong(this);
-		this.users.add(user);
-	}
-
-	public void removeBelongs(User belongs) {
-		this.users.remove(belongs);
-		belongs.setBelong(null);
-	}
 
 	public Component getOrgBelong() {
 		return orgBelong;

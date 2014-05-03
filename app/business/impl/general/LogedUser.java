@@ -1,7 +1,8 @@
 package business.impl.general;
 
+
 import persistence.GeneralFinder;
-import models.User;
+
 import models.exception.BusinessException;
 import business.impl.Command;
 
@@ -17,13 +18,17 @@ public class LogedUser implements Command {
 	@Override
 	public Object execute() throws BusinessException {
 
-		User user = (User) GeneralFinder.findUserByLogin(login);
 
-		if (user != null && user.getPassword().equals(password))
-			throw new BusinessException(
-					"el usuario no existe o la password no coincide");
+		// User user = (User) GeneralFinder.findUserByLogin(login);
 
-		return user;
+		// if (user != null && user.getPassword().equals(password))
+		// throw new BusinessException(
+		// "el usuario no existe o la password no coincide");
+
+		// return user;
+
+		// este return sobra
+		return null;
 	}
 
 }

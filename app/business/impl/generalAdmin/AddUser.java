@@ -2,24 +2,25 @@ package business.impl.generalAdmin;
 
 import javax.persistence.EntityManager;
 
-import persistence.util.Jpa;
-import models.User;
 import models.exception.BusinessException;
+import persistence.util.Jpa;
 import business.impl.Command;
 
 public class AddUser implements Command{
-	private User newUser;
+//	private User newUser;
 	
 	//entiendo que un administrador general puede agregar cualquier usuario
-	public AddUser( User newUser) {
-		this.newUser = newUser;
-	}
+//	public AddUser( User newUser) {
+//		this.newUser = newUser;
+//	}
+
 	@Override
 	public Object execute() throws BusinessException {
 		
 		EntityManager em  = Jpa.getManager();
 		
-		em.persist(newUser);
+
+		//		em.persist(newUser);
 		
 		return null;
 	}

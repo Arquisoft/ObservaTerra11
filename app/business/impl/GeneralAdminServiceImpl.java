@@ -2,46 +2,46 @@ package business.impl;
 
 import models.AbstractOrganization;
 import models.UploadDocs;
-import models.User;
 
 import models.exception.BusinessException;
 import business.GeneralAdminService;
-
 import business.impl.employee.UpdateDoc;
-import business.impl.generalAdmin.AddExternalSource;
 import business.impl.generalAdmin.UpdateExternalSource;
 import business.impl.generalAdmin.UpdateONG;
 
-public class GeneralAdminServiceImpl implements GeneralAdminService{
-	
+public class GeneralAdminServiceImpl implements GeneralAdminService {
+
 	CommandExecutor executor = new CommandExecutor();
 
 	@Override
-	public void updateONG(AbstractOrganization organization) throws BusinessException {
-		
+	public void updateONG(AbstractOrganization organization)
+			throws BusinessException {
+
 		executor.execute(new UpdateONG(organization));
-		
+
+
 	}
 
 	@Override
 	public void updateDocs(UploadDocs doc) throws BusinessException {
-		
+
+
 		executor.execute(new UpdateDoc(doc));
-		
+
 	}
 
-	@Override
-	public void addExternalSource(String link, User user) throws BusinessException {
-		
-		executor.execute(new AddExternalSource(link, user));
-	}
+	// @Override
+	// public void addExternalSource(String link, User user) throws
+	// BusinessException {
+	//
+	// executor.execute(new AddExternalSource(link, user));
+	// }
 
 	@Override
 	public void updateExternalSource(UploadDocs doc) throws BusinessException {
-		
+
 		executor.execute(new UpdateExternalSource(doc));
 	}
-	
-	
-	
+
+
 }
