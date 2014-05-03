@@ -2,11 +2,12 @@ package business.impl.adminONG;
 
 import java.util.List;
 
+import business.impl.Command;
 import model.User;
 import model.exception.BusinessException;
 import persistence.AdminONGFinder;
 
-public class ListUploadUsers {
+public class ListUploadUsers implements Command {
 
 	User user;
 
