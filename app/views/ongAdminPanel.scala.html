@@ -1,14 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-<title>Cabecera</title> 
-</h:head>
-<h:body>
 
-<!-- Aquí va tu código -->
+@import play.i18n._
 
-</h:body>
-</html>
+@main("ObservaTerra") {
+<h1>@Messages.get("Panel de Administrador de ONG")</h1>
+
+
+<li><a href="routes.Application.Anonimo">Anadir Miembro</a>
+<li><a href="routes.Application.Anonimo">Borrar Miembro</a>
+
+}
