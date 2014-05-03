@@ -1,4 +1,4 @@
-package controllers;
+package controllers.generalAdmin;
 
 import static play.data.Form.form;
 import model.AbstractOrganization;
@@ -6,14 +6,14 @@ import model.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.login;
 import conf.ServicesFactory;
+import controllers.routes;
 
 public class UpdateONG extends Controller {
 
 	private AbstractOrganization organization;
 
-	public String validate() {
+	public String get() {
 		try {
 			ServicesFactory.getGeneralAdminService().updateONG(organization);
 			return null;
@@ -23,16 +23,16 @@ public class UpdateONG extends Controller {
 	}
 
 	public static Result updateONG(AbstractOrganization organization) {
-		return ok(login.render(form(Login.class)));
+		return ok();
 	}
 
 	/**
 	 * Handle login form submission.
 	 */
-	public static Result authenticate() {
+	public static Result post() {
 		Form<UpdateONG> updateONGForm = form(UpdateONG.class).bindFromRequest();
 		if (updateONGForm.hasErrors()) {
-			return badRequest(login.render(form(Login.class)));
+			return badRequest();
 		} else {
 			return redirect(routes.Application.index());
 		}

@@ -7,6 +7,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.login;
 import conf.ServicesFactory;
+import controllers.routes;
 
 public class Login extends Controller {
 	
