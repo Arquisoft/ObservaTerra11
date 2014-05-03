@@ -1,7 +1,7 @@
-package controllers.generalAdmin;
+package controllers.employee;
 
 import static play.data.Form.form;
-import model.UploadDocs;
+import model.User;
 import model.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
@@ -9,26 +9,27 @@ import play.mvc.Result;
 import conf.ServicesFactory;
 import controllers.routes;
 
-public class UpdateExternalSource extends Controller {
+public class UpdateDocs extends Controller {
 
-	private UploadDocs doc;
+	private String link;
+	private User user;
 
 	public String get() {
 		try {
-			ServicesFactory.getGeneralAdminService().updateExternalSource(doc);
+			ServicesFactory.getGeneralAdminService().addExternalSource(link,
+					user);
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();
 		}
 	}
 
-	public static Result updateExternalSource() {
+	public static Result updateONG() {
 		return ok();
 	}
 
-	
 	public static Result post() {
-		Form<UpdateExternalSource> form = form(UpdateExternalSource.class)
+		Form<UpdateDocs> form = form(UpdateDocs.class)
 				.bindFromRequest();
 		if (form.hasErrors()) {
 			return badRequest();
