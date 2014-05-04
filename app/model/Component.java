@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -13,7 +14,9 @@ public class Component implements Serializable {
 
 	private static final long serialVersionUID = 733926216731815257L;
 
-	//Se ha quitado el @id porque no funcionaba
+	@Id
+	private Long id;
+	 // se quito por esa mierda porque no funcionaba
 	@ManyToOne
 	private AbstractOrganization orgHave;
 	
