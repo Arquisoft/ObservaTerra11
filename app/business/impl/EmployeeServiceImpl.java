@@ -8,6 +8,7 @@ import model.User;
 import model.exception.BusinessException;
 import business.EmployeeService;
 import business.impl.adminONG.AddUserONG;
+import business.impl.adminONG.DeleteUserONG;
 import business.impl.employee.AddDoc;
 import business.impl.employee.AddExternalSource;
 import business.impl.employee.DeleteDoc;
@@ -62,6 +63,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void addUserONG(User admin, User newUser) throws BusinessException {
 		executor.execute(new AddUserONG(admin, newUser));
+		
+	}
+	
+	@Override
+	public void deleteUserONG(User admin, User newUser) throws BusinessException {
+		executor.execute(new DeleteUserONG(admin, newUser));
 		
 	}
 

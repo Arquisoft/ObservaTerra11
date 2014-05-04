@@ -25,4 +25,6 @@ public interface EmployeeService {
 	public void ListUploadDocs(User user) throws BusinessException;
 
 	public void addUserONG(User admin, User newUser) throws BusinessException;
+
+	void deleteUserONG(User admin, User newUser) throws BusinessException;
 }
