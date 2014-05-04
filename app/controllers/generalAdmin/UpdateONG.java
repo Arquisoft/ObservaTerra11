@@ -13,7 +13,7 @@ public class UpdateONG extends Controller {
 
 	private AbstractOrganization organization;
 
-	public String get() {
+	public String validate() {
 		try {
 			ServicesFactory.getGeneralAdminService().updateONG(organization);
 			return null;
@@ -22,7 +22,7 @@ public class UpdateONG extends Controller {
 		}
 	}
 
-	public static Result updateONG(AbstractOrganization organization) {
+	public static Result updateONG(AbstractOrganization organization) { //get
 		return ok();
 	}
 

@@ -14,7 +14,7 @@ public class AddExternalSource extends Controller {
 	private String link;
 	private User user;
 
-	public String get() {
+	public String validate() {
 		try {
 			ServicesFactory.getGeneralAdminService().addExternalSource(link,
 					user);
@@ -24,7 +24,7 @@ public class AddExternalSource extends Controller {
 		}
 	}
 
-	public static Result updateONG() {
+	public static Result updateONG() { //get
 		return ok();
 	}
 

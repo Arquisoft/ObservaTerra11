@@ -52,9 +52,9 @@ GET		/ajax						controllers.Pruebas.ajax()
 GET		/parallel					controllers.Pruebas.parallel()
 
 # Login
-POST    /login                      controllers.Login.authenticate()
-GET     /login          	        controllers.Login.login()
+POST    /login                      controllers.general.Login.authenticate()
+GET     /login          	        controllers.general.Login.login()
 
 # Signup
-POST    /signup                     controllers.Register.saveUser()
-GET     /signup                     controllers.Register.signUp()
+POST    /signup                     controllers.general.Register.saveUser()
+GET     /signup                     controllers.general.Register.signUp()

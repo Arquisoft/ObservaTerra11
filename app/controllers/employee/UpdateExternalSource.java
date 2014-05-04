@@ -13,7 +13,7 @@ public class UpdateExternalSource extends Controller {
 
 	private UploadDocs doc;
 
-	public String get() {
+	public String validate() {
 		try {
 			ServicesFactory.getEmployeeService().updateExternalSource(doc);
 			return null;
@@ -22,7 +22,7 @@ public class UpdateExternalSource extends Controller {
 		}
 	}
 
-	public static Result updateExternalSource() {
+	public static Result updateExternalSource() { //get
 		return ok();
 	}
 
