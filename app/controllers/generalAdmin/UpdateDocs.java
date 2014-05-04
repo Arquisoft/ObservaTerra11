@@ -13,7 +13,7 @@ public class UpdateDocs extends Controller {
 
 	private UploadDocs doc;
 
-	public String get() {
+	public String validate() {
 		try {
 			ServicesFactory.getGeneralAdminService().updateDocs(doc);
 			return null;
@@ -22,7 +22,7 @@ public class UpdateDocs extends Controller {
 		}
 	}
 
-	public static Result updateDocs() {
+	public static Result updateDocs() { //get
 		return ok();
 	}
 
