@@ -1,0 +1,46 @@
+@(form: Form[Register])
+
+<html>
+    <head>
+        <title>Sign Up Example</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/signup.css")">
+    </head>
+    <body>
+        @helper.form(routes.Register.saveUser) {
+            <h1>Sign up</h1>
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            <p>
+                <input type="text" name="code" placeholder="Code" value="@form("code").value">
+            </p>
+             <p>
+                <input type="text" name="name" placeholder="Name" value="@form("name").value">
+            </p>
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@form("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password">
+            </p>
+            
+            <p>
+                <input type="password" name="repeatPassword" placeholder="Repeat Password">
+            </p>
+            <p>
+                <button type="submit">Registro</button>
+            </p>
+
+        }
+    </body>
+</html>

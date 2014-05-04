@@ -19,17 +19,32 @@
      </header>
      <h1>@title</h1>    
 
-     @content 
+     @content
 
-    <footer>
-    <nav>
-    @Messages.get("Admin")
-    <ul>
-    <li><a href="@routes.Application.showCountries">Countries</a>
-	<li><a href="@routes.Application.showIndicators">Indicators</a>
-	<li><a href="@routes.Application.showObservations">Observations</a>
-	</ul>
-    </nav>
-    </footer>
+ @helper.form(routes.BorrarUsuario) {
+
+            <h1>Introduzca el nombre del usuario:</h1>
+
+            @if(form.hasGlobalErrors) {
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+
+            <p>
+                <input type="nombre" name="nombre" placeholder="Nombre" value="@form("nombre").value">
+            </p>
+
+            <p>
+                <button type="submit">Borrar usuario</button>
+            </p>
+
+        }
     </body>
 </html>

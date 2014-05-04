@@ -19,17 +19,30 @@
      </header>
      <h1>@title</h1>    
 
-     @content 
+     @content
 
-    <footer>
-    <nav>
-    @Messages.get("Admin")
-    <ul>
-    <li><a href="@routes.Application.showCountries">Countries</a>
-	<li><a href="@routes.Application.showIndicators">Indicators</a>
-	<li><a href="@routes.Application.showObservations">Observations</a>
-	</ul>
-    </nav>
-    </footer>
+        @helper.form(routes.Ong.AddUser) {
+            <h1>Añadir usuario a tu ONG (debe estar previamente registrado)</h1>
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            <p>
+                <input type="text" name="nombre" placeholder="Nombre" value="@form("nombre").value">
+            </p>
+
+            <p>
+                <button type="submit">Añadir usuario</button>
+            </p>
+
+        }
     </body>
 </html>

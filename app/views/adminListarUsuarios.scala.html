@@ -1,0 +1,26 @@
+@(usuarios: List[User])
+
+@import play.i18n._
+
+@main("ObservaTerra") {
+<h1>@Messages.get("Panel de Administrador")</h1>
+<h2>@Messages.get("Listado de usuarios")</h2>
+
+<table>
+<tr>	
+<th>@Messages.get("Codigo")</th>
+<th>@Messages.get("Nombre")</th>
+<th>@Messages.get("Email")</th>
+</tr>
+@for(user <- usuarios) {
+	<tr>
+	<td>@user.codigo</td>
+	<td>@user.name</td>
+	<td>@user.email</td>
+	</tr> 
+}
+</table>
+
+<li><a href="routes.Application.Anonimo">Panel de administrador</a>
+
+}

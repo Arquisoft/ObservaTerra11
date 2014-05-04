@@ -28,7 +28,7 @@ data/*.log
 
 
 #################################
-# Ignore Play! working directory 
+# Ignore Play! working directory
 #################################
 bin/
 /db
@@ -46,6 +46,3 @@ server.pid
 *.eml
 /dist/
 .cache
-/.target
-conf/evolutions/default/1.sql
-*.sql

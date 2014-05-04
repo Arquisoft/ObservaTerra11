@@ -1,0 +1,60 @@
+@(title: String)(content: Html)
+
+@import play.i18n._
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <header>
+        <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
+        <h1>ObservaTerra</h1></a>
+     </header>
+     <h1>@title</h1>    
+
+     @content
+
+        @helper.form(routes.Register.saveUser) {
+            <h1>Modificar usuario</h1>
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            <p>
+                <input type="text" name="code" placeholder="Code" value="@form("code").value">
+            </p>
+             <p>
+                <input type="text" name="name" placeholder="Name" value="@form("name").value">
+            </p>
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@form("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password">
+            </p>
+            
+            <p>
+                <input type="password" name="repeatPassword" placeholder="Repeat Password">
+            </p>
+            <p>
+                <button type="submit">Modificar usuario</button>
+            </p>
+
+        }
+    </body>
+</html>
