@@ -1,13 +1,15 @@
-@(form: Form[Login])
+
+@(form: Form[controllers.general.Login])
 
 <html>
     <head>
-        <title>Login</title>
+        <title>Login Example</title>
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
     </head>
     <body>
-        @helper.form(routes.Login.authenticate) {
+        @helper.form(controllers.general.routes.Login.authenticate) {
+
 
             <h1>Sign in</h1>
 
@@ -24,8 +26,8 @@
             }
 
             <p>
-                <input type="email" name="email" placeholder="Email" value="@form("email").value">
-            </p>
+                <input type="login" name="loginString" placeholder="Login" value="@form("loginString").value">
+          </p>
             <p>
                 <input type="password" name="password" placeholder="Password">
             </p>

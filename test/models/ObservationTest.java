@@ -4,6 +4,9 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.*;
 import static play.test.Helpers.*;
 import play.test.*;
+import model.Country;
+import model.Observation;
+
 import org.junit.*;
 
 

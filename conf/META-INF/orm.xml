@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings 
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+  	version="2.0">
+
+<!-- Employee queries --> 
+	<named-query name="User.listUploads">
+		<query>
+		select u from UploadDocs u where u.user_id = ?1
+		</query>
+	</named-query>
+	
+	<!-- Admin queries --> 
+	<named-query name="ONG.findAll">
+		<query>
+		select o from AbstractOrganization o;
+		</query>
+	</named-query>
+	
+<!--  AdminONG queries -->	
+	<named-query name="User.listUpdateUsers">
+		<query>
+		select u from User u where u.organization = ?1
+		</query>
+	</named-query>
+
+	
+	
+	<!-- General queries --> 
+	<named-query name="general.findUserLogin">
+		<query>
+		select u from User u where u.login = ?1;
+		</query>
+	</named-query>
+	
+	
+
+</entity-mappings>

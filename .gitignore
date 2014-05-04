@@ -28,9 +28,9 @@ data/*.log
 
 
 #################################
-# Ignore Play! working directory 
+# Ignore Play! working directory
 #################################
-bin/ 
+bin/
 /db
 .eclipse
 /lib/
@@ -38,7 +38,7 @@ bin/
 /modules
 /project/project
 /project/target
-/target
+.target
 tmp/
 test-result
 server.pid
