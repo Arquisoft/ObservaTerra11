@@ -7,6 +7,7 @@ import model.UploadDocs;
 import model.User;
 import model.exception.BusinessException;
 import business.EmployeeService;
+import business.impl.adminONG.AddUserONG;
 import business.impl.employee.AddDoc;
 import business.impl.employee.AddExternalSource;
 import business.impl.employee.DeleteDoc;
@@ -56,6 +57,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void ListUploadDocs(User user) throws BusinessException {
 
 		executor.execute(new ListUploadDocs(user));
+	}
+
+	@Override
+	public void addUserONG(User admin, User newUser) throws BusinessException {
+		executor.execute(new AddUserONG(admin, newUser));
+		
 	}
 
 }
