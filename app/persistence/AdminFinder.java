@@ -3,7 +3,7 @@ package persistence;
 import java.util.List;
 
 import persistence.util.Jpa;
-import models.AbstractOrganization;
+import model.AbstractOrganization;
 
 public class AdminFinder {
 

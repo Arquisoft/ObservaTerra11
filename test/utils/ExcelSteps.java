@@ -1,9 +1,10 @@
 package utils;
 
+import model.Observation;
 import models.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
-import static models.Observation.average;
+import static model.Observation.average;
 
 import java.io.InputStream;
 import java.util.List;

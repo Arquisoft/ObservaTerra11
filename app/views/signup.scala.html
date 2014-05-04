@@ -1,4 +1,4 @@
-@(form: Form[Register])
+@(form: Form[controllers.general.Register])
 
 <html>
     <head>
@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/signup.css")">
     </head>
     <body>
-        @helper.form(routes.Register.saveUser) {
+        @helper.form(controllers.general.routes.Register.saveUser) {
             
             <h1>Sign up</h1>
             

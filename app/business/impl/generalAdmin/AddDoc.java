@@ -1,16 +1,20 @@
 package business.impl.generalAdmin;
 
 
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 
-import models.AbstractOrganization;
-import models.exception.BusinessException;
+import model.AbstractOrganization;
+import model.UploadDocs;
+import model.User;
+import model.exception.BusinessException;
 import persistence.util.Jpa;
 import business.impl.Command;
 
 public class AddDoc implements Command {
 
-	// private User user;
+	 private User user;
 
 	private AbstractOrganization provider;
 	private String measure;
@@ -19,25 +23,25 @@ public class AddDoc implements Command {
 
 
 	// aqui pondríamos la logica para almacenar los ficheros que se subieron.
-	// public AddDoc(String area, String indicator, String measure,
-	// AbstractOrganization provider,User user, Date time) {
-	// this.area = area;
-	// this.indicator = indicator;
-	// this.measure = measure;
-	// this.provider = provider;
-	// this.user = user;
-	// }
+	 public AddDoc(String area, String indicator, String measure,
+	 AbstractOrganization provider,User user, Date time) {
+	 this.area = area;
+	 this.indicator = indicator;
+	 this.measure = measure;
+	 this.provider = provider;
+	 this.user = user;
+	 }
 
 	@Override
 	public Object execute() throws BusinessException {
 		EntityManager em = Jpa.getManager();
 
 
-		// User u = em.merge(user);
+		 User u = em.merge(user);
 		AbstractOrganization o = em.merge(provider);
 
-		// em.persist(new UploadDocs(area,indicator,measure,o,u,new Date(),
-		// false));
+		em.persist(new UploadDocs(area, indicator, measure, o, u, new Date(),
+				false));
 
 		return null;
 	}

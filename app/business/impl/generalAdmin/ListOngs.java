@@ -3,8 +3,8 @@ package business.impl.generalAdmin;
 import java.util.List;
 
 import persistence.AdminFinder;
-import models.AbstractOrganization;
-import models.exception.BusinessException;
+import model.AbstractOrganization;
+import model.exception.BusinessException;
 import business.impl.Command;
 
 public class ListOngs implements Command{
