@@ -3,14 +3,11 @@
 @import play.i18n._
 
 @main("ObservaTerra") {
-<h2>@Messages.get("Bar.chart") - @indicator.name</h2>
-
 <script src='@routes.Assets.at("javascripts/processing.min.js")' type="text/javascript"></script>
 <script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'sketch140407a'; }
 </script>
-
 		<div id="content">
 			<div>
 				<canvas id="sketch140407a" data-processing-sources='@routes.Assets.at("javascripts/sketch_140407a.pde")' 
@@ -28,12 +25,6 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 					<p>JavaScript is required to view the contents of this page.</p>
 				</noscript>
 	    		</div>
-	    		
-	    		<canvas id="Earth" data-processing-sources='@routes.Assets.at("javascripts/Earth.pde")' 
-						width="400" height="400">
-					<p>Your browser does not support the canvas tag.</p>
-					<!-- Note: you can put any alternative content here. -->
-				</canvas>
 	    	</div>
 		</div>
 				
