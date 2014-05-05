@@ -1,0 +1,29 @@
+{ "root": "data/root",
+"numberOfCrawlers":"5",
+"crawl":[
+   {
+     "url":"http://www.who.int/gho/database/en/",
+     "folder":"C://data//ot//who"
+   },
+   {
+     "url":"http://hdr.undp.org/en/statistics/hdi",
+     "folder":"C://data//ot//undp"
+   },
+   {
+     "url":"http://data.worldbank.org/topic/agriculture-and-rural-development",
+     "folder":"C://data//ot//worldbank"
+   },
+   {
+     "url":"http://faostat3.fao.org/",
+     "folder":"C://data//ot//faostat"
+   },
+   {
+     "url":"http://www.landmatrix.org/es/get-the-detail/",
+     "folder":"C://data//ot//landmatrix"
+   },
+   {
+     "url":"http://data.ifpri.org",
+     "folder":"C://data//ot//ifpri"
+   }
+]
+} 	
