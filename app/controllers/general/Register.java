@@ -2,7 +2,7 @@ package controllers.general;
 
 import static play.data.Form.form;
 import controllers.routes;
-import model.UserLabra;
+import model.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -17,17 +17,18 @@ public class Register extends Controller {
 	public String repeatPassword;
 
 	public String validate() {
-		UserLabra user;
+		User user;
 		if (!checkPasswords()) {
 			return "password NOOOOO :(";
 		}
-		if ((user = UserLabra.save(code, name, email, password)) == null) {
-			return "THINGS WENT WRONG! :(";
-		}
-		return user.toString();
+		// if ((user = User.save(code, name, email, password)) == null) {
+		// return "THINGS WENT WRONG! :(";
+		// }
+		// return user.toString();
 		/*
 		 * Esto es para hacerlo bien xD return null;
 		 */
+		return null;
 	}
 
 	public static Result signUp() {
