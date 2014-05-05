@@ -1,8 +1,8 @@
 package controllers;
 
-import model.Country;
-import model.Indicator;
-import model.Observation;
+import models.Country;
+import models.Indicator;
+import models.Observation;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;

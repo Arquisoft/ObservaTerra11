@@ -5,8 +5,6 @@ import java.util.*;
 
 import com.avaje.ebean.*;
 
-import model.Country;
-import model.Observation;
 import models.*;
 
 public class Global extends GlobalSettings {

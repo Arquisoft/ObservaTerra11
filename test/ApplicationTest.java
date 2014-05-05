@@ -8,9 +8,9 @@ import static play.test.Helpers.inMemoryDatabase;
 import java.util.Collections;
 import java.util.Map;
 
-import model.Country;
-import model.Indicator;
-import model.Observation;
+import models.Country;
+import models.Indicator;
+import models.Observation;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -5,9 +5,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-import model.Country;
-import model.Indicator;
-import model.Observation;
+import models.Country;
+import models.Indicator;
+import models.Observation;
 import play.Logger;
 import play.data.Form;
 import play.i18n.Messages;

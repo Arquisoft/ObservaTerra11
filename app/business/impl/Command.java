@@ -1,6 +1,6 @@
 package business.impl;
 
-import model.exception.BusinessException;
+import models.exception.BusinessException;
 
 
 

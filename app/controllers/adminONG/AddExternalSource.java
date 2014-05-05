@@ -1,8 +1,8 @@
 package controllers.adminONG;
 
 import static play.data.Form.form;
-import model.User;
-import model.exception.BusinessException;
+import models.User;
+import models.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;

@@ -2,11 +2,11 @@ package business.impl.adminONG;
 
 import java.util.List;
 
-import business.impl.Command;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import persistence.AdminONGFinder;
+import business.impl.Command;
 
 
 public class ListUploadDocs implements Command {

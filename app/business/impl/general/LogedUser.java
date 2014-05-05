@@ -1,8 +1,8 @@
 package business.impl.general;
 
 
-import model.User;
-import model.exception.BusinessException;
+import models.User;
+import models.exception.BusinessException;
 import persistence.GeneralFinder;
 import business.impl.Command;
 

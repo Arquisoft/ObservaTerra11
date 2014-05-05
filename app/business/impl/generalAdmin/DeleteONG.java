@@ -3,8 +3,8 @@ package business.impl.generalAdmin;
 import javax.persistence.EntityManager;
 
 import persistence.util.Jpa;
-import model.AbstractOrganization;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.exception.BusinessException;
 import business.impl.Command;
 
 public class DeleteONG implements Command {

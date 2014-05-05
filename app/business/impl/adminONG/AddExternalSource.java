@@ -4,9 +4,9 @@ import java.util.Date;
 
 import javax.persistence.EntityManager;
 
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import persistence.util.Jpa;
 import business.impl.Command;
 

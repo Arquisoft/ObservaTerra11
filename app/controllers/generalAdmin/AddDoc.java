@@ -4,10 +4,10 @@ import static play.data.Form.form;
 
 import java.util.Date;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;

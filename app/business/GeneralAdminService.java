@@ -1,11 +1,12 @@
 package business;
 
 import java.util.Date;
+import java.util.List;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 
 public interface GeneralAdminService {
 

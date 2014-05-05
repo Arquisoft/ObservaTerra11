@@ -1,7 +1,7 @@
 package business;
 
-import model.User;
-import model.exception.BusinessException;
+import models.User;
+import models.exception.BusinessException;
 
 
 

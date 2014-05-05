@@ -1,9 +1,9 @@
 package controllers.adminONG;
 
 import static play.data.Form.form;
-import model.User;
-import model.exception.BusinessException;
-import model.types.PermissionLevel;
+import models.User;
+import models.exception.BusinessException;
+import models.types.PermissionLevel;
 import conf.ServicesFactory;
 import controllers.routes;
 import controllers.general.Register;
@@ -17,6 +17,7 @@ public class AddUserONG extends Controller {
 	public String login;
 	public String password;
 	public String repeatPassword;
+	public String mail;
 	private PermissionLevel permission;
 
 	public String validate(User admin) {
@@ -25,7 +26,7 @@ public class AddUserONG extends Controller {
 		}
 		try {
 			ServicesFactory.getEmployeeService().addUserONG(admin,
-					new User(login, password, permission));
+					new User(login,mail, password, permission));
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();

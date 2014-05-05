@@ -1,11 +1,13 @@
 package business.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import business.GeneralAdminService;
 import business.impl.generalAdmin.AddExternalSource;
 import business.impl.generalAdmin.AddONG;
@@ -31,7 +33,7 @@ public class GeneralAdminServiceImpl implements GeneralAdminService {
 	}
 	
 	public List<User> listUsers() throws BusinessException {
-		return executor.execute(new ListUsers());
+		return new ArrayList<User>();//return executor.execute(new ListUsers());
 	}
 
 	@Override

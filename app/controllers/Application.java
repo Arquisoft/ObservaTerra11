@@ -1,14 +1,17 @@
 package controllers;
 
 import static play.data.Form.form;
-import model.Country;
-import model.Indicator;
-import model.Observation;
+import models.Country;
+import models.Indicator;
+import models.Observation;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.adminAnadirUsuario;
+import views.html.adminPanel;
+import views.html.index;
+import controllers.general.DeleteUser;
 import controllers.general.Register;
-import views.html.*;
 
 public class Application extends Controller {
 
@@ -40,8 +43,12 @@ public class Application extends Controller {
 		return ok(adminAnadirUsuario.render(form(Register.class)));
 	}
 	
+	public static Result adminBorrarUsuario(){
+		return DeleteUser.deleteUser();
+	}
+	
 	public static Result adminListarUsuarios(){
-		return ok(adminListarUsuarios.render(ServicesFactory.);
+		return ok();//adminListarUsuarios.render(ServicesFactory.);
 	}
 
 	static Form<Country> countryForm = Form.form(Country.class);

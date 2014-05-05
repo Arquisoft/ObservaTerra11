@@ -1,9 +1,9 @@
 package controllers.generalAdmin;
 
 import static play.data.Form.form;
-import model.User;
-import model.exception.BusinessException;
-import model.types.PermissionLevel;
+import models.User;
+import models.exception.BusinessException;
+import models.types.PermissionLevel;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -17,7 +17,8 @@ public class AddUser extends Controller {
 	public String login;
 	public String password;
 	public String repeatPassword;
-	private PermissionLevel permission;
+	public String email;
+	public PermissionLevel permission;
 
 	public String validate() {
 		if (!checkPasswords()) {
@@ -25,7 +26,7 @@ public class AddUser extends Controller {
 		}
 		try {
 			ServicesFactory.getGeneralAdminService().addUser(
-					new User(login, password, permission));
+					new User(login,email, password, permission));
 			return null;
 		} catch (BusinessException e) {
 			return e.getMessage();

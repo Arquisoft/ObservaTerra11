@@ -1,6 +1,6 @@
 package persistence;
 
-import model.User;
+import models.User;
 import persistence.util.Jpa;
 
 

@@ -1,7 +1,7 @@
 package controllers.adminONG;
 
-import model.User;
-import model.exception.BusinessException;
+import models.User;
+import models.exception.BusinessException;
 import play.mvc.Controller;
 import play.mvc.Result;
 import conf.ServicesFactory;

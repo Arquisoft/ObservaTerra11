@@ -1,7 +1,7 @@
 package controllers.general;
 
 import static play.data.Form.form;
-import model.exception.BusinessException;
+import models.exception.BusinessException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;

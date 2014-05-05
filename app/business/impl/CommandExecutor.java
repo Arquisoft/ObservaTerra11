@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import persistence.util.Jpa;
-import model.exception.BusinessException;
+import models.exception.BusinessException;
 
 
 public class CommandExecutor {

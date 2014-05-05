@@ -3,8 +3,8 @@ package business.impl.adminONG;
 
 import javax.persistence.EntityManager;
 
-import model.UploadDocs;
-import model.exception.BusinessException;
+import models.UploadDocs;
+import models.exception.BusinessException;
 import persistence.util.Jpa;
 import business.impl.Command;
 

@@ -2,7 +2,7 @@ package controllers.general;
 
 import static play.data.Form.form;
 import controllers.routes;
-import model.UserLabra;
+import models.UserLabra;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;

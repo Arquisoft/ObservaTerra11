@@ -2,8 +2,8 @@ package persistence;
 
 import java.util.List;
 
-import model.UploadDocs;
-import model.User;
+import models.UploadDocs;
+import models.User;
 import persistence.util.Jpa;
 
 

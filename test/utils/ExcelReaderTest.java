@@ -6,9 +6,8 @@ import static org.assertj.core.api.Assertions.offset;
 import java.io.InputStream;
 import java.util.List;
 
-import model.Observation;
 import models.*;
-import static model.Observation.average;
+import static models.Observation.average;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

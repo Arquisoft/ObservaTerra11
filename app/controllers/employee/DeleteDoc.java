@@ -1,6 +1,6 @@
 package controllers.employee;
 
-import model.exception.BusinessException;
+import models.exception.BusinessException;
 import conf.ServicesFactory;
 import play.mvc.Controller;
 import play.mvc.Result;

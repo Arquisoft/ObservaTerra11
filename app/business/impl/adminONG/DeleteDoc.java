@@ -2,9 +2,9 @@ package business.impl.adminONG;
 
 import javax.persistence.EntityManager;
 
+import models.UploadDocs;
+import models.exception.BusinessException;
 import persistence.util.Jpa;
-import model.UploadDocs;
-import model.exception.BusinessException;
 import business.impl.Command;
 
 public class DeleteDoc implements Command {

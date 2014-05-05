@@ -3,9 +3,9 @@ package business.impl.employee;
 
 import java.util.List;
 
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import persistence.EmployeeFinder;
 import business.impl.Command;
 

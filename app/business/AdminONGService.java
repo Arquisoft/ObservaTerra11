@@ -2,10 +2,10 @@ package business;
 
 import java.util.Date;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 
 public interface AdminONGService {
 

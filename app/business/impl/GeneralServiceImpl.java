@@ -1,7 +1,7 @@
 package business.impl;
 
-import model.User;
-import model.exception.BusinessException;
+import models.User;
+import models.exception.BusinessException;
 import business.GeneralService;
 import business.impl.general.LogedUser;
 

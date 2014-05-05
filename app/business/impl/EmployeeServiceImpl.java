@@ -2,10 +2,10 @@ package business.impl;
 
 import java.util.Date;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import business.EmployeeService;
 import business.impl.adminONG.AddUserONG;
 import business.impl.adminONG.DeleteUserONG;
@@ -13,9 +13,9 @@ import business.impl.adminONG.ListUploadUsers;
 import business.impl.employee.AddDoc;
 import business.impl.employee.AddExternalSource;
 import business.impl.employee.DeleteDoc;
+import business.impl.employee.ListUploadDocs;
 import business.impl.employee.UpdateDoc;
 import business.impl.employee.UpdateExternalSource;
-import business.impl.employee.ListUploadDocs;
 
 public class EmployeeServiceImpl implements EmployeeService {
 

@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import model.types.PermissionLevel;
+import models.types.PermissionLevel;
 
 @Entity
 @Table(name = "TUSERS")

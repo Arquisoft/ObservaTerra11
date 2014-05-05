@@ -2,10 +2,10 @@ package business.impl.generalAdmin;
 
 import javax.persistence.EntityManager;
 
-import model.AbstractOrganization;
-import model.UploadDocs;
-import model.User;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.UploadDocs;
+import models.User;
+import models.exception.BusinessException;
 import persistence.util.Jpa;
 import business.impl.Command;
 

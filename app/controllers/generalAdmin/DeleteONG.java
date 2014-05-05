@@ -1,7 +1,7 @@
 package controllers.generalAdmin;
 
-import model.AbstractOrganization;
-import model.exception.BusinessException;
+import models.AbstractOrganization;
+import models.exception.BusinessException;
 import play.mvc.Controller;
 import play.mvc.Result;
 import conf.ServicesFactory;
