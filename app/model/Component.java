@@ -3,6 +3,9 @@ package model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -13,7 +16,11 @@ public class Component implements Serializable {
 
 	private static final long serialVersionUID = 733926216731815257L;
 
-	//Se ha quitado el @id porque no funcionaba
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	@ManyToOne
 	private AbstractOrganization orgHave;
 	
@@ -44,5 +51,13 @@ public class Component implements Serializable {
 
 	public void setOrgHave(AbstractOrganization orgHave) {
 		this.orgHave = orgHave;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }
