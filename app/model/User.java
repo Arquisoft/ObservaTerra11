@@ -31,6 +31,8 @@ public class User implements Serializable {
 	
 	private String password;
 	
+	private String email;
+	
 	@Enumerated(EnumType.STRING)
 	private PermissionLevel permission;
 	
@@ -46,10 +48,18 @@ public class User implements Serializable {
 
 		this.activo = true;
 	}
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-	public User(String login, String password, PermissionLevel permission) {
+	public User(String login,String email, String password, PermissionLevel permission) {
 		this.login = login;
 		this.password = password;
+		this.email = email;
 		this.permission = permission;
 		this.activo = true;
 	}

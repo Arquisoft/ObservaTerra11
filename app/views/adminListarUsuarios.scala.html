@@ -9,13 +9,13 @@
 <table>
 <tr>	
 <th>@Messages.get("Codigo")</th>
-<th>@Messages.get("Nombre")</th>
+<th>@Messages.get("login")</th>
 <th>@Messages.get("Email")</th>
 </tr>
 @for(user <- usuarios) {
 	<tr>
-	<td>@user.codigo</td>
-	<td>@user.name</td>
+	<td>@user.id</td>
+	<td>@user.login</td>
 	<td>@user.email</td>
 	</tr> 
 }

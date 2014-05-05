@@ -39,6 +39,10 @@ public class Application extends Controller {
 	public static Result adminAnadir(){
 		return ok(adminAnadirUsuario.render(form(Register.class)));
 	}
+	
+	public static Result adminListarUsuarios(){
+		return ok(adminListarUsuarios.render(ServicesFactory.);
+	}
 
 	static Form<Country> countryForm = Form.form(Country.class);
 	static Form<Indicator> indicatorForm = Form.form(Indicator.class);

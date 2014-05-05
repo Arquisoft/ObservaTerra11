@@ -63,4 +63,5 @@ GET     /signup                     controllers.general.Register.signUp()
 
 GET     /adminPanel                 controllers.Application.administrador()
 GET     /adminAnadirUsuario         controllers.Application.adminAnadir()
+GET		/adminListarUsuarios		controllers.Application.adminListar()
 

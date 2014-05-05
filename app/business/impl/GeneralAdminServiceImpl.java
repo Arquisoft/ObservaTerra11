@@ -29,6 +29,10 @@ public class GeneralAdminServiceImpl implements GeneralAdminService {
 		executor.execute(new UpdateONG(organization));
 
 	}
+	
+	public List<User> listUsers() throws BusinessException {
+		return executor.execute(new ListUsers());
+	}
 
 	@Override
 	public void updateDocs(UploadDocs doc) throws BusinessException {

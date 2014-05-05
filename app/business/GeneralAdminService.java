@@ -12,6 +12,8 @@ public interface GeneralAdminService {
 	public void updateONG(AbstractOrganization organization)
 			throws BusinessException;
 
+	public List<User> listUsers() throws BusinessException;
+	
 	public void updateDocs(UploadDocs doc) throws BusinessException;
 
 	public void addExternalSource(String link, User user)
