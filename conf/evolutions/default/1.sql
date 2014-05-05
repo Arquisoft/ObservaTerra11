@@ -11,8 +11,10 @@ create table TORGANIZATION (
 ;
 
 create table TCOMPOSEDBY (
+  id                        bigint auto_increment not null,
   org_have_id               bigint,
-  org_belong_id             bigint)
+  org_belong_id             bigint,
+  constraint pk_TCOMPOSEDBY primary key (id))
 ;
 
 create table country (
@@ -58,21 +60,11 @@ create table TUSERS (
   constraint pk_TUSERS primary key (id))
 ;
 
-create table user_labra (
-  code                      varchar(255) not null,
-  name                      varchar(255),
-  email                     varchar(255),
-  password                  varchar(255),
-  constraint pk_user_labra primary key (code))
-;
-
 create sequence country_seq;
 
 create sequence indicator_seq;
 
 create sequence observation_seq;
-
-create sequence user_labra_seq;
 
 alter table TCOMPOSEDBY add constraint fk_TCOMPOSEDBY_orgHave_1 foreign key (org_have_id) references TORGANIZATION (id) on delete restrict on update restrict;
 create index ix_TCOMPOSEDBY_orgHave_1 on TCOMPOSEDBY (org_have_id);
@@ -109,8 +101,6 @@ drop table if exists TDOCUMENTS;
 
 drop table if exists TUSERS;
 
-drop table if exists user_labra;
-
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists country_seq;
@@ -118,6 +108,4 @@ drop sequence if exists country_seq;
 drop sequence if exists indicator_seq;
 
 drop sequence if exists observation_seq;
-
-drop sequence if exists user_labra_seq;
 
