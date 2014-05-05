@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(form: Form[controllers.general.Register])
 
 @import play.i18n._
 
@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>@title</title>
+        
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -17,12 +17,12 @@
         <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
         <h1>ObservaTerra</h1></a>
      </header>
-     <h1>@title</h1>    
+        
 
-     @content
+     
 
-        @helper.form(routes.Register.saveUser) {
-            <h1>Añadir nuevo usuario</h1>
+        @helper.form(controllers.general.routes.Register.saveUser) {
+            <h1>Anadir nuevo usuario</h1>
             
             @if(form.hasGlobalErrors) { 
                 <p class="error">

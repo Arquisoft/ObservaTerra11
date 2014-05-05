@@ -58,3 +58,9 @@ GET     /login          	        controllers.general.Login.login()
 # Signup
 POST    /signup                     controllers.general.Register.saveUser()
 GET     /signup                     controllers.general.Register.signUp()
+
+# AdministradorPrincipal
+
+GET     /adminPanel                 controllers.Application.administrador()
+GET     /adminAnadirUsuario         controllers.Application.adminAnadir()
+
