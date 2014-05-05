@@ -1,0 +1,47 @@
+@(indicator: Indicator)
+
+@import play.i18n._
+
+@main("ObservaTerra") {
+<script src='@routes.Assets.at("javascripts/processing.min.js")' type="text/javascript"></script>
+<script type="text/javascript">
+// convenience function to get the id attribute of generated sketch html element
+function getProcessingSketchId () { return 'sketch140407a'; }
+</script>
+		<div id="content">
+			<div>
+				<canvas id="sketch140407a" data-processing-sources='@routes.Assets.at("javascripts/sketch_140407a.pde")' 
+						width="400" height="400">
+					<!-- Note: you can put any alternative content here. -->
+				</canvas>
+				
+				<div>
+				<canvas id="pieChart" data-processing-sources='@routes.Assets.at("javascripts/pieChart.pde")' 
+						width="400" height="400">
+					<p>Your browser does not support the canvas tag.</p>
+					<!-- Note: you can put any alternative content here. -->
+				</canvas>
+				<noscript>
+					<p>JavaScript is required to view the contents of this page.</p>
+				</noscript>
+	    		</div>
+	    	</div>
+		</div>
+				
+	<script type="application/javascript">
+		 //aquí se cargarán los datos del JSON
+		 var values;
+		 //con esto obtenemos el JSON ya parseado y listo para usarse
+		 $.ajax(
+      	 { 
+      	 type: "GET",
+      	 url:"/api/observation/indicator/hdi",
+    	 dataType: 'json',
+    	 async: false, //MUY IMPORTANTE!!(sinó en Firefox no funcionará)
+         success: function(data){
+      			values=data; 
+      	 }
+	   });  
+	   
+    </script>
+}
