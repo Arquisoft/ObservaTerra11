@@ -1,0 +1,35 @@
+@()
+
+@import play.i18n._
+
+@main("ObservaTerra with Ajax") {
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $.ajax(
+       { url:"/api/country",
+    	 dataType: 'json',
+         success: function(data){
+      	 		$('#divToFill').html(' ');
+      	 		$('#divToFill').append('<ul>');
+      			for (var i in data) {
+        			$('#divToFill').append('<li>Country: ' + data[i].name);
+      			}
+      	 		$('#divToFill').append('</ul>');
+      	 }
+	   });
+  });
+});
+
+</script>
+</head>
+<body>
+
+<div id="divToFill">
+ ...
+</div>
+<button>@Messages.get("list.countries")</button>
+}
+
