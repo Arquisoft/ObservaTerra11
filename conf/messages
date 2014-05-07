@@ -1,0 +1,27 @@
+name = name
+create = Create
+Wellcome			= Wellcome to ObservaTerra
+countries 			= Countries
+Country				= Country
+Indicator			= Indicator
+Value				= Value
+Bar.chart			= Bar chart
+Admin				= Admin
+list.countries		= List of Countries
+add.country 		= Add Country
+delete.country 		= Delete Country
+
+indicators			= Indicators
+list.indicators		= List of Indicators
+add.indicator 		= Add Indicator
+delete.indicator 	= Delete Indicator
+
+observations		= Observations
+list.observations	= List of Observations
+add.observation 	= Add Observation
+delete.observation  = Delete Observation
+
+file.uploaded		= Uploaded file with {0} observations
+read.excel.error	= Error reading excel file
+upload.excel.file	= Upload Excel File
+upload				= Upload

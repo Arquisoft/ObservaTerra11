@@ -1,0 +1,41 @@
+# Countries
+
+countries:
+
+    - !!model.Country
+        code: es
+        name: Spain
+
+    - !!model.Country
+        code: fr
+        name: France
+
+    - !!model.Country
+        code: it
+        name: Italy
+
+    - !!model.Country
+        code: cl
+        name: Chile
+
+# Indicators
+
+indicators:
+
+    - !!model.Indicator
+        code: hdi
+        name: Human Development Index
+
+    - !!model.Indicator
+        code: wi
+        name: WebIndex
+        
+# User
+
+users:
+
+    - !!model.UserLabra
+        code: 1
+        name: Test
+        email: qwe@qwe.qwe
+        password: password
