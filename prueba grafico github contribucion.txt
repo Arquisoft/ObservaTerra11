@@ -1,3 +1,0 @@
-Si alguien se pregunta porque nos sale que no realizamos contribuciones en las estadisticas
-es porque estamos trabajando en el branch, para que salgan las contribuciones hay que hacer
-commits en el master
