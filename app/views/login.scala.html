@@ -9,6 +9,7 @@
     <body>
         @helper.form(controllers.general.routes.Login.authenticate) {
 
+
             <h1>Sign in</h1>
 
             @if(form.hasGlobalErrors) {
@@ -25,7 +26,7 @@
 
             <p>
                 <input type="login" name="loginString" placeholder="Login" value="@form("loginString").value">
-            </p>
+          </p>
             <p>
                 <input type="password" name="password" placeholder="Password">
             </p>

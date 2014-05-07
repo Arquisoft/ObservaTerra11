@@ -6,11 +6,14 @@ import model.Observation;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.*;
+import controllers.general.*;
+
 
 public class Application extends Controller {
 
 	public static Result index() {
-		return ok("index");
+		return ok(index.render());
 	}
 
 	public static Result showCountries() {
@@ -28,9 +31,20 @@ public class Application extends Controller {
 	public static Result bars(String indicator) {
 		return ok("bars");
 	}
-
-	static Form<Country> countryForm = Form.form(Country.class);
-	static Form<Indicator> indicatorForm = Form.form(Indicator.class);
-	static Form<Observation> observationForm = Form.form(Observation.class);
-
+	
+	public static Result administrador(){
+		return ok(adminPanel.render());
+	}
+	
+//	public static Result adminAnadir(){
+//		return ok(adminAnadirUsuario.render(form(Register.class)));
+//	}
+	
+//	public static Result adminBorrarUsuario(){
+//		return DeleteUser.deleteUser();
+//	}
+	
+	public static Result adminListarUsuarios(){
+		return ok();//adminListarUsuarios.render(ServicesFactory.);
+	}
 }
