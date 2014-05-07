@@ -10,7 +10,7 @@ import play.mvc.Result;
 public class Application extends Controller {
 
 	public static Result index() {
-		return ok("index");
+		return ok("index.scala");
 	}
 
 	public static Result showCountries() {
