@@ -91,7 +91,7 @@ alter table observation add constraint fk_observation_country_1 foreign key (cou
 create index ix_observation_country_1 on observation (country_code);
 alter table observation add constraint fk_observation_indicator_2 foreign key (indicator_code) references indicator (code) on delete restrict on update restrict;
 create index ix_observation_indicator_2 on observation (indicator_code);
-
+alter table observation
 
 
 # --- !Downs

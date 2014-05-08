@@ -24,9 +24,9 @@ public class Global extends GlobalSettings {
 				Ebean.save(all.get("indicators"));
 				
 				// Some observations 
-				new Observation("es","hdi",2.3, "0").save();
-				new Observation("fr","hdi",3.4, "0").save(); 
-				new Observation("it","hdi",3.0, "0").save();
+				new Observation("es","hdi",2.3, null).save();
+				new Observation("fr","hdi",3.4, null).save(); 
+				new Observation("it","hdi",3.0, null).save();
 			}
 		}
 	}

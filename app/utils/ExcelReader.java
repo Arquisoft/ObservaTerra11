@@ -8,6 +8,8 @@ import java.util.List;
 
 import models.Observation;
 
+import models.User;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -41,7 +43,7 @@ public class ExcelReader {
 			}
 			if (!countryName.equals("")) {
 				String userId = play.mvc.Controller.session().get("id");
-				Observation obs = new Observation(countryName, indicatorName, value, userId);
+				Observation obs = new Observation(countryName, indicatorName, value, User.findByLogin(userId));
 				obsList.add(obs);
 			} 
 		  }
