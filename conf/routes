@@ -18,6 +18,10 @@ POST	/indicator/delete/:code       controllers.Admin.deleteIndicator(code: Strin
 POST	/observation				controllers.Admin.newObservation()
 POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Long)
 
+GET     /login                  	controllers.Login.login()
+POST    /login                      controllers.Login.authenticate()
+
+
 # API 
 
 GET		/api/country					controllers.API.countries()
