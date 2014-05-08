@@ -23,10 +23,10 @@ public class Global extends GlobalSettings {
  				Ebean.save(all.get("countries")); 
 				Ebean.save(all.get("indicators"));
 				
-				// Some observations
-				new Observation("es","hdi",2.3).save();
-				new Observation("fr","hdi",3.4).save(); 
-				new Observation("it","hdi",3.0).save();
+				// Some observations 
+				new Observation("es","hdi",2.3, "0").save();
+				new Observation("fr","hdi",3.4, "0").save(); 
+				new Observation("it","hdi",3.0, "0").save();
 			}
 		}
 	}
