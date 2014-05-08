@@ -2,19 +2,19 @@
 
 countries:
 
-    - !!model.Country
+    - !!models.Country
         code: es
         name: Spain
 
-    - !!model.Country
+    - !!models.Country
         code: fr
         name: France
 
-    - !!model.Country
+    - !!models.Country
         code: it
         name: Italy
 
-    - !!model.Country
+    - !!models.Country
         code: cl
         name: Chile
 
@@ -22,20 +22,10 @@ countries:
 
 indicators:
 
-    - !!model.Indicator
+    - !!models.Indicator
         code: hdi
         name: Human Development Index
 
-    - !!model.Indicator
+    - !!models.Indicator
         code: wi
         name: WebIndex
-        
-# User
-
-users:
-
-    - !!model.UserLabra
-        code: 1
-        name: Test
-        email: qwe@qwe.qwe
-        password: password
