@@ -43,8 +43,16 @@
 }
 </ul>
 
+<div id="session">
+     @if(session().get("id")==null){
+		<li><a href="login">Login</a>
+		<li><a href="register">Register</a>
+		} else{
+			<p>Bienvenido @{session().get("id")}</p>
+			<a href="/logout">Log out</a>
+		}
+	</div>
+	
 
-<li><a href="login">Login</a>
-<li><a href="register">Register</a>
     </body>
 </html>

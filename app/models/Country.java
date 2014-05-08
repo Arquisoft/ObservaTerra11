@@ -17,12 +17,10 @@ public class Country extends Model {
   @Id
   public String code;
   public String name;
-  public String usercode;
   
-  public Country(String code, String name, String usercode) {
+  public Country(String code, String name) {
 	  this.code = code;
 	  this.name = name;
-	  this.usercode = usercode;
   }
    
   public static Finder<String,Country> find = new Finder(String.class, Country.class);
@@ -55,11 +53,6 @@ public class Country extends Model {
   
   public static JsonNode toJson(Country country) {
 	return Json.toJson(country);
-  }
-  
-  public static Country findByUserId(String id)
-  {
-	  return find.where().eq("userid", id);
   }
 }
 
