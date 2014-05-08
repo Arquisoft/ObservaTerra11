@@ -22,6 +22,10 @@ GET     /login                  	controllers.Login.login()
 POST    /login                      controllers.Login.authenticate()
 
 
+
+GET     /logout                  	controllers.Application.logout()
+GET     /logout                  	controllers.Application.logout()
+
 GET     /register                  	controllers.Register.register()
 POST    /register                   controllers.Register.isValid()
 POST	/register					controllers.Register.userRegister()

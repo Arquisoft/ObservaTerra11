@@ -38,6 +38,11 @@ public class Application extends Controller {
     public static Result bars(String indicator) {
     	return ok(bars.render(Indicator.findByCode(indicator)));
     }
+    
+    public static Result logout(){
+        session().clear();
+        return redirect(routes.Application.index());
+    }
 
     static Form<Country>  	  countryForm     = Form.form(Country.class);
     static Form<Indicator>    indicatorForm   = Form.form(Indicator.class);
