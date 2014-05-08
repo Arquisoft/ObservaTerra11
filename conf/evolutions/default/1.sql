@@ -9,6 +9,16 @@ create table country (
   constraint pk_country primary key (code))
 ;
 
+create table users (
+create table country (
+  code						varchar(255) auto_increment,
+  name                      varchar(255),
+  email						varchar(255),
+  password					varchar(255),
+  constraint pk_country primary key (code))
+ ;
+  
+
 create table indicator (
   code                      varchar(255) not null,
   name                      varchar(255),
