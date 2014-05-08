@@ -50,7 +50,7 @@ public class Admin extends Controller {
       String indicatorId = requestData.get("indicatorId");
       String userId = requestData.get("userId");
       Double value = Double.parseDouble(requestData.get("value"));
-      Observation obs = new Observation(countryId,indicatorId,value, userId);
+      Observation obs = new Observation(countryId,indicatorId,value, User.findByLogin(userId));
 	  obs.save();
   	  return redirect(routes.Application.showObservations());  
     }

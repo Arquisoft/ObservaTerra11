@@ -1,17 +1,26 @@
 package models;
  
 import java.util.List;
+
+import javax.persistence.CascadeType;
  
 import javax.persistence.Entity;
  
 import play.libs.Json;
+
+import javax.persistence.OneToMany;
+
+import models.Observation;
  
 import com.fasterxml.jackson.databind.JsonNode;
  
 @SuppressWarnings("serial")
 @Entity
 public class User extends Users {
- 
+		
+	 @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+		List<Observation> observations;
+	
  
         public User(String id, String name, String password, String email,
                         String type, boolean active) {
@@ -31,8 +40,8 @@ public class User extends Users {
                 }
         }
  
-        public static User findByLogin(String login) {
-                User u=find.where().eq("id", login).findUnique();
+        public static User findByLogin(String id) {
+                User u=find.where().eq("id", id).findUnique();
                 return u;
         }
  
