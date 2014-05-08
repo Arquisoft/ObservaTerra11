@@ -16,19 +16,7 @@ countries:
 
     - !!models.Country
         code: cl
-        name: Chile
-
-
-# Users
-
-users:
-	-!!models.Users
-	code: 1
-	name: labra
-	password: labra
-	active: true
-	
-	
+        name: Chile	
 
 # Indicators
 

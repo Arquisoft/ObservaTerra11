@@ -46,6 +46,7 @@ create table indicator (
 
 create table observation (
   id                        bigint not null,
+  user_id                   varchar(255),
   obs_value                 double,
   country_code              varchar(255),
   indicator_code            varchar(255),

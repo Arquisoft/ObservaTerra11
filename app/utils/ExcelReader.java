@@ -40,7 +40,7 @@ public class ExcelReader {
 				}
 			}
 			if (!countryName.equals("")) {
-				session().get("id");
+				String userId = play.mvc.Controller.session().get("id");
 				Observation obs = new Observation(countryName, indicatorName, value, userId);
 				obsList.add(obs);
 			} 
