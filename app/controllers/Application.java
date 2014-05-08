@@ -24,7 +24,7 @@ public class Application extends Controller {
     }
 
     public static Result showCountries() {
-    	return ok(country.render(Country.all(),countryForm));
+    	return ok(country.render(Country.,countryForm));
     }
     
     public static Result showIndicators() {

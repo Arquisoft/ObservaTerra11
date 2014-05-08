@@ -16,6 +16,7 @@ public abstract class Users extends Model {
         public String email;
         public String type;
         public boolean active;
+        public List<Country> countries;
  
         public Users(String id, String name, String password, String email, String type, boolean active) {
                 this.id = id;

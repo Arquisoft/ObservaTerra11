@@ -35,6 +35,8 @@ create table collaborator (
 create table country (
   code                      varchar(255) not null,
   name                      varchar(255),
+  userid					varchar(255),
+  constraint fk_userid foreign key(userid),
   constraint pk_country primary key (code))
 ;
 

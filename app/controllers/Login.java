@@ -39,7 +39,7 @@ public class Login extends Controller{
         private boolean validarUser() {
 //              session().isDirty = true;
                 User user = User.findByLogin(username);
-                if (user != null && user.active == true
+                if (user != null //&& user.active == true
                                 && user.password.compareTo(password) == 0) {
                         session().put("id", user.id);
                         session().put("name", user.name);
