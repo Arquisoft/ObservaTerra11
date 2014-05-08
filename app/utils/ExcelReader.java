@@ -3,6 +3,7 @@ package utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import play.mvc.Controller;
 import java.util.List;
 
 import models.Observation;
@@ -39,7 +40,8 @@ public class ExcelReader {
 				}
 			}
 			if (!countryName.equals("")) {
-				Observation obs = new Observation(countryName, indicatorName, value);
+				session().get("id");
+				Observation obs = new Observation(countryName, indicatorName, value, userId);
 				obsList.add(obs);
 			} 
 		  }

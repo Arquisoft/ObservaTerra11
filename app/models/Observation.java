@@ -17,6 +17,9 @@ public class Observation extends Model {
   @Id
   public Long id;
   
+  @ManyToOne
+  public String userId;
+  
   @Required
   public Double obsValue;
   
@@ -28,24 +31,26 @@ public class Observation extends Model {
   
   public static Finder<Long,Observation> find = new Finder(Long.class, Observation.class);
 
-  public Observation(Country country, Indicator indicator, Double value) {
+  public Observation(Country country, Indicator indicator, Double value, String userId) {
 	  this.country = country;
 	  this.indicator=indicator;
 	  this.obsValue = value ;
+	  this.userId = userId;
   }
   
-  public Observation(String countryCode, String indicatorCode, Double value) {
+  public Observation(String countryCode, String indicatorCode, Double value, String userId) {
 	  this.country  = Country.find.ref(countryCode);
 	  this.indicator= Indicator.find.ref(indicatorCode);
 	  this.obsValue = value ;
+	  this.userId = userId;
   }
 
   public static List<Observation> all() {
     return find.all();
   }
 
-  public static Observation create(String code, String indicator, Double value) {
-	  Observation observation = new Observation(code,indicator,value);
+  public static Observation create(String code, String indicator, Double value, String userId) {
+	  Observation observation = new Observation(code,indicator,value, userId);
 	  observation.save();
 	  return observation;
   }
@@ -89,4 +94,11 @@ public class Observation extends Model {
 	return result;
   }
 
+  public static List<Observation> findByUserId(String userId)
+  {
+	  List<Observation> result = find.where().eq("userid", userId).findList();
+	  
+	  return result;
+  }
+  
 }
