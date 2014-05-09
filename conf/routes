@@ -23,6 +23,7 @@ POST    /login                      controllers.Login.authenticate()
 
 GET     /addIndicator                  	controllers.Application.addIndicator()
 
+GET     /addObservation                 	controllers.Application.addObservation()
 
 
 GET     /logout                  	controllers.Application.logout()

@@ -22,6 +22,10 @@ public class Application extends Controller {
     	return ok(addIndicator.render(indicatorForm));
     }
     
+    public static Result addObservation() {
+    	return ok(addObservation.render(Observation.all(),Country.all(),Indicator.all(),observationForm));
+    }
+    
     public static Result showIndicators() {
     	return ok(indicator.render(Indicator.all(),indicatorForm));
     }
