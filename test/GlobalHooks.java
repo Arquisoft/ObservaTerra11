@@ -7,28 +7,28 @@ import static play.test.Helpers.*;
 
 public class GlobalHooks {
 
-    @Inject
-    private TestBrowser testBrowser;
+	@Inject
+	private TestBrowser testBrowser;
 
-    @Inject
-    private TestServer testServer;
+	@Inject
+	private TestServer testServer;
 
-    private static boolean initialised = false;
+	private static boolean initialised = false;
 
-    @Before
-    public void before() {
-        if (!initialised) {
-            start(testServer);
-            initialised = true;
+	@Before
+	public void before() {
+		if (!initialised) {
+			start(testServer);
+			initialised = true;
 
-            Runtime.getRuntime().addShutdownHook(new Thread() {
-                @Override
-                public void run() {
-                    testBrowser.quit();
-                    testServer.stop();
-                }
-            });
-        }
-    }
+			Runtime.getRuntime().addShutdownHook(new Thread() {
+				@Override
+				public void run() {
+					testBrowser.quit();
+					testServer.stop();
+				}
+			});
+		}
+	}
 
 }
