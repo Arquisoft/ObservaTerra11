@@ -45,7 +45,15 @@ public class Observation extends Model {
 	  this.user = user;
   }
 
-  public static List<Observation> all() {
+  public Observation(String string, String string2, double d) {
+	// TODO Auto-generated constructor stub
+}
+
+public Observation(Country country2, Indicator ind, Double value) {
+	// TODO Auto-generated constructor stub
+}
+
+public static List<Observation> all() {
     return find.all();
   }
 
