@@ -83,7 +83,7 @@
  }
 <div id="session">
      @if(session().get("id")==null){
-		<li><a href="@Messages.get("Login")">Login</a>
+		<li><a href="/login">@Messages.get("Login")</a>
 		<li><a href="register">@Messages.get("Registro")</a>
 		} else{
 			<p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
