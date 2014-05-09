@@ -21,7 +21,7 @@ POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Lon
 GET     /login                  	controllers.Login.login()
 POST    /login                      controllers.Login.authenticate()
 
-GET     /addIn                  	controllers.Login.login()
+GET     /addIndicator                  	controllers.Application.addIndicator()
 
 
 
