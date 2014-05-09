@@ -21,6 +21,7 @@
 
      @content
 
+@if(session().get("id") != null) {
 @if(session().get("type").equals("admin")){
     <footer>
     <nav>
@@ -35,6 +36,7 @@
     </nav>
     </footer>
     <div><a href="/">@Messages.get("back")</a></div>
+    }
     }
     </body>
 </html>
