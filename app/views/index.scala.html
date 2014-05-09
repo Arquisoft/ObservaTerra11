@@ -34,6 +34,7 @@
 }
 </table>
 
+@if(session().get("id") != null){
 <h2>@Messages.get("Bar.chart")</h2>
 <ul>
 @for(indicator <- indicators) {
@@ -42,6 +43,7 @@
 	
 }
 </ul>
+}
 			@if(session().get("id")!=null){
 				@if(session().get("type").contains("business")) {
 					<li><a href="addIndicator">Agregar indicadores</a>
