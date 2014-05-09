@@ -43,10 +43,10 @@
 }
 </ul>
 			@if(session().get("id")!=null){
-			@if(session().get("type").contains("col")) {
-				<li><a href="addIndicator">Agregar indicadores</a>
-				<li><a href="addObservations">Agregar observaciones</a>			
- 			}
+				@if(session().get("type").contains("business")) {
+					<li><a href="addIndicator">Agregar indicadores</a>
+					<li><a href="addObservations">Agregar observaciones</a>			
+	 			}
  			}
 
 
