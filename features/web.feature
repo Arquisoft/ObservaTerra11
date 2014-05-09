@@ -7,6 +7,6 @@ Característica: Página principal
 
 Escenario: 
     
-	Dado que tengo arrancada la aplicación
-	Cuando voy a la página principal
-	Entonces el título es ObservaTerra
+	Dado que tengo arrancada la aplicacion
+	Cuando voy a la pagina principal
+	Entonces el titulo es ObservaTerra
