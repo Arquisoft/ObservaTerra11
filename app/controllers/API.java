@@ -28,6 +28,11 @@ public class API extends Controller {
     	return ok(Json.toJson(Country.findByCode(code)));
     }
 
+    public static Result collaborator()
+    {
+    	return ok(Json.toJson(Business.all()));
+    }
+    
     /** Generates JSON with links to other resources 
      *  following HATEOAS principles */
     public static Result countriesHATEOAS() {
