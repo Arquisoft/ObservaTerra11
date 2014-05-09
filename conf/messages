@@ -1,6 +1,6 @@
 name = name
 create = Create
-Wellcome			= Wellcome to ObservaTerra
+Welcome			= Welcome to ObservaTerra
 countries 			= Countries
 Country				= Country
 Indicator			= Indicator
@@ -10,6 +10,25 @@ Admin				= Admin
 list.countries		= List of Countries
 add.country 		= Add Country
 delete.country 		= Delete Country
+
+Pais = Country
+Indicador = Indicator
+Valor = Value
+
+agregar.indicador = Add indicador
+agregar.observacion = Add observation
+
+Exportar = Export
+tugrupo = your work group is 
+
+Login = Login
+Registro = Register
+
+Salir = Log out
+
+Paises = Countries
+Indicadores = Indicators
+Observaciones = Observations
 
 indicators			= Indicators
 list.indicators		= List of Indicators

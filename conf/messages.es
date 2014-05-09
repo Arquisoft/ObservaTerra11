@@ -1,6 +1,6 @@
 name = nombre
 create = Crear
-Wellcome			= Bienvenido al portal ObservaTerra
+Welcome			= Bienvenido al portal ObservaTerra
 Country				= País
 Indicator			= Indicador
 Value				= Valor
@@ -10,6 +10,23 @@ countries 			= Países
 list.countries		= Lista de países
 add.country 		= Añadir país
 delete.country 		= Borrar país
+Exportar = Exportar
+tugrupo = tu grupo de trabajo es 
+Login = Acceder
+Registro = Regístrate
+agregar.indicador = Agregar indicador
+agregar.observacion = Agregar observación
+
+Pais = País
+Indicador = Indicador
+Valor = Valor
+
+
+Salir = Desconexión
+
+Paises = Países
+Indicadores = Observaciones
+Observaciones = Observaciones
 
 indicators			= Indicadores
 list.indicators		= Lista de indicadores
