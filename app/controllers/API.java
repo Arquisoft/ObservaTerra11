@@ -3,20 +3,26 @@ package controllers;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import models.*;
+import models.Business;
+import models.Country;
+import models.Indicator;
+import models.Observation;
 import play.Logger;
-import play.data.*;
+import play.data.Form;
 import play.i18n.Messages;
-import play.mvc.*;
 import play.libs.Json;
-import play.mvc.Http.*;
+import play.mvc.Controller;
+import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
-import utils.*;
+import play.mvc.Result;
+import utils.ExcelReader;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.*;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class API extends Controller {
 
@@ -110,6 +116,21 @@ public class API extends Controller {
     	return ok(Json.toJson(obsList));
     }
 
+    
+    public static Result observationsByIndicatorAndCountry(String country, String indicator) {
+    	List<Observation> obsList = Observation.findByCountryCode(country);
+    	List<Observation> resultado = new ArrayList<Observation>();
+    	
+    	for(Observation o : obsList) {
+    		if(o.indicator.code.equals(indicator))
+    			resultado.add(o);
+    	}
+    	
+    	return ok(Json.toJson(obsList));
+    }
+    
+    
+    
     public static Result addObservation(String country, String indicator) {
     	return TODO;
     }
