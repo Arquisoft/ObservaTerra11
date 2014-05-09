@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import models.*;
 import play.data.*;
 import play.mvc.Controller;
@@ -62,8 +64,24 @@ public class Admin extends Controller {
       String indicatorId = requestData.get("indicatorId");
       String userId = requestData.get("userId");
       Double value = Double.parseDouble(requestData.get("value"));
+      
+      
+      List<Observation> lista = Observation.findByIndicatorName(indicatorId);
+      boolean encontrado=false;
+      
+      for (Observation o : lista) {
+
+    	  if(o.country.code.equals(countryId)){
+    		  o.obsValue = (o.obsValue+value)/2;
+    		  o.save();
+    		  encontrado = true;
+    	  }
+      }
+      
+      if(!encontrado){
       Observation obs = new Observation(countryId,indicatorId,value, User.findByLogin(userId));
 	  obs.save();
+      }
 	  if(session().get("type").equals("admin"))
 		  return redirect(routes.Application.showObservations());  
 	  else
