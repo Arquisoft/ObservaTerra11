@@ -64,7 +64,10 @@ public class Admin extends Controller {
       Double value = Double.parseDouble(requestData.get("value"));
       Observation obs = new Observation(countryId,indicatorId,value, User.findByLogin(userId));
 	  obs.save();
-  	  return redirect(routes.Application.showObservations());  
+	  if(session().get("type").equals("admin"))
+		  return redirect(routes.Application.showObservations());  
+	  else
+		  return redirect(routes.Application.addObservation());  
     }
 
     public static Result deleteObservation(Long id) {

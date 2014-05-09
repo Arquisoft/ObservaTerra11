@@ -45,7 +45,20 @@
 			@if(session().get("id")!=null){
 				@if(session().get("type").contains("business")) {
 					<li><a href="addIndicator">Agregar indicadores</a>
-					<li><a href="addObservations">Agregar observaciones</a>			
+					<li><a href="addObservation">Agregar observaciones</a>			
+	 			}
+ 			}
+ 			
+ 			@if(session().get("id")!=null){
+				@if(session().get("type").contains("collaborator")) {
+					<li><a href="addObservation">Agregar observaciones</a>			
+	 			}
+ 			}
+ 			
+ 			@if(session().get("id")!=null){
+				@if(session().get("type").contains("admin")) {
+					<li><a href="addIndicator">Agregar indicadores</a>
+					<li><a href="addObservation">Agregar observaciones</a>			
 	 			}
  			}
 
