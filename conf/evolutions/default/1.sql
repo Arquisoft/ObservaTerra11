@@ -87,11 +87,13 @@ create sequence user_seq;
 
 create sequence users_seq;
 
-alter table observation add constraint fk_observation_country_1 foreign key (country_code) references country (code) on delete restrict on update restrict;
-create index ix_observation_country_1 on observation (country_code);
-alter table observation add constraint fk_observation_indicator_2 foreign key (indicator_code) references indicator (code) on delete restrict on update restrict;
-create index ix_observation_indicator_2 on observation (indicator_code);
-alter table observation
+alter table observation add constraint fk_observation_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_observation_user_1 on observation (user_id);
+alter table observation add constraint fk_observation_country_2 foreign key (country_code) references country (code) on delete restrict on update restrict;
+create index ix_observation_country_2 on observation (country_code);
+alter table observation add constraint fk_observation_indicator_3 foreign key (indicator_code) references indicator (code) on delete restrict on update restrict;
+create index ix_observation_indicator_3 on observation (indicator_code);
+
 
 
 # --- !Downs
