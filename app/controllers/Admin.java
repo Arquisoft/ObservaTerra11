@@ -33,7 +33,7 @@ public class Admin extends Controller {
   	      views.html.indicator.render(Indicator.all(),indicatorForm)
   	    );
   	  }
-  	    else if(form.hasErrors() && session().get("type").equals("collaborator")) {
+  	    else if(form.hasErrors() && session().get("type").equals("business")) {
     	  	    return badRequest(
     	  	      views.html.addIndicator.render(indicatorForm)
     	  	    );
@@ -41,7 +41,7 @@ public class Admin extends Controller {
   		Indicator ind = form.get();
   	    Indicator.create(ind);
   	    return redirect(routes.Application.showIndicators());  
-  	  } else if(session().get("type").equals("collaborator")) {
+  	  } else if(session().get("type").equals("business")) {
     		Indicator ind = form.get();
       	    Indicator.create(ind);
       	    return redirect(routes.Application.addIndicator());  
