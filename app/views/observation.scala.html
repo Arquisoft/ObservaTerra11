@@ -1,5 +1,5 @@
-@(observations: List[Observation], 
-  countries: List[Country], 
+@(observations: List[Observation],
+  countries: List[Country],
   indicators: List[Indicator],
   form: Form[Observation])
 
@@ -7,38 +7,40 @@
 @import helper.twitterBootstrap._
 
 @main(Messages.get("list.observations")) {
-
+  <div id="wrap">
+<div class="page-header">
 <h1>@Messages.get("observations")</h1>
+</div>
 
-<table>
+<tableclass="table table-bordered">
 <tr>
-<th>Id</th>
-<th>Country</th>
-<th>Indicator</th>
-<th>Value</th>
-<th>Remove</th>
+<th class="field-label col-md-3 active">>Id</th>
+<th class="field-label col-md-3 active">>Country</th>
+<th class="field-label col-md-3 active">>Indicator</th>
+<th class="field-label col-md-3 active">>Value</th>
+<th class="field-label col-md-3 active">>Remove</th>
 </tr>
-@for(obs <- observations) { 
+@for(obs <- observations) {
   <tr>
   <td>@obs.id</td>
   <td>@obs.country.name</td>
   <td>@obs.indicator.name</td>
   <td>@obs.obsValue</td>
   <td>@helper.form(routes.Admin.deleteObservation(obs.id)) {
-               <input type="image" 
-                      src="@{routes.Assets.at("images/delete.gif")}" 
+               <input type="image"
+                      src="@{routes.Assets.at("images/delete.gif")}"
                       alt='@{Messages.get("delete.observation")}'>
          }
    </td>
   </tr>
-   
+
 }
 </table>
+<p class="lead">
+<h2>@{Messages.get("add.observation")}</h2></p>
 
-<h2>@{Messages.get("add.observation")}</h2>
-    
 	@helper.form(action = routes.Admin.newObservation()) {
-	
+
         @helper.inputText(form("value"))
 
          <select name="countryId">
@@ -46,28 +48,29 @@
          	<option value="@country.code">@country.name</option>
          }
         </select>
-        
+
         <select name="indicatorId">
          @for( indicator <- indicators) {
          	<option value="@indicator.code">@indicator.name</option>
          }
-        </select> 
+        </select>
 
-        <input type="submit" value="@{Messages.get("create")}">
-        
-    }    
-    
-<h2>@Messages.get("upload.excel.file")</h2>
+        <input type="submit" class="btn btn-default" value="@{Messages.get("create")}">
 
-@helper.form(action = routes.API.uploadExcel, 
+    }
+
+<p class = "lead"><h2>@Messages.get("upload.excel.file")</h2></p>
+
+@helper.form(action = routes.API.uploadExcel,
 	  'enctype -> "multipart/form-data") {
-    
+
     <input type="file" name="excel">
-    
+
     <p>
-        <input type="submit">
+        <input type="submit"  class="btn btn-default">>
     </p>
-    
+
 }
-   
+
 }
+</div>

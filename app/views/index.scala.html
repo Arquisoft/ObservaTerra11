@@ -7,28 +7,60 @@
     <head>
         <title>ObservaTerra</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-    </head>
+  <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
+  <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/bootstrap.js")" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/navbar.css")">
+
+  </head>
     <body>
-    
-    <header>
-        <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
-        <h1>ObservaTerra</h1></a>
-     </header>
-<h1>@Messages.get("Welcome")</h1>
+<div id="wrap">
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<a class="navbar-brand">ObservaTerra</a>
+</div>
+<div id="session" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+  <li><a href="/">@Messages.get("back")</a></li>
+  @if(session().get("id")==null){
+ <li class="active"><a>@Messages.get("Login")</a>
+ <li><a href="register">@Messages.get("Registro")</a>
+ } else{
+   <p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
+   <a href="/logout">@Messages.get("Salir")</a>
+ }
+</ul>
+</div>
+</div><!--/.nav-collapse -->
+</div>
+    <div class="page-header">
+
+        <h1>@Messages.get("Welcome")</h1>
+     </div>
+
 <h2>@Messages.get("list.observations")</h2>
-<table>
-<tr>	
-<th>@Messages.get("Country")</th>
-<th>@Messages.get("Indicator")</th>
-<th>@Messages.get("Value")</th>
+<table class="table table-bordered">
+<tr>
+<th class="field-label col-md-3 active">@Messages.get("Country")</th>
+<th class="field-label col-md-3 active">@Messages.get("Indicator")</th>
+<th class="field-label col-md-3 active">@Messages.get("Value")</th>
 @if(session().get("id")!=null) {
 					<th>@Messages.get("Exportar")</th>
-					
+
 				}
-					
+
 </tr>
 @for(observation <- observations) {
 	<tr>
@@ -37,9 +69,9 @@
 	<td>@observation.obsValue</td>
 	@if(session().get("id")!=null) {
 					<td><a href="/api/observation/@observation.country.code/@observation.indicator.code">Exportar como Json</a></td>
-					
+
 				}
-	</tr> 
+	</tr>
 }
 </table>
 
@@ -50,7 +82,7 @@
 @for(indicator <- indicators) {
 
  <li><a href="@routes.Application.bars(indicator.code)">@indicator.name</a></li>
-	
+
 }
 </ul>
 }
@@ -59,13 +91,13 @@
 			@if(session().get("id")!=null){
 				@if(session().get("type").contains("business")) {
 					<li><a href="addIndicator">@Messages.get("agregar.indicador")</a>
-					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>			
+					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>
 	 			}
  			}
- 			
+
  			@if(session().get("id")!=null){
 				@if(session().get("type").contains("collaborator")) {
-					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>			
+					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>
 	 			}
  			}
 
@@ -85,13 +117,13 @@
  }
 <div id="session">
      @if(session().get("id")==null){
-     	<p>@Messages.get("navegando.anonimo")</p>
-		<li><a href="/login">@Messages.get("Login")</a>
-		<li><a href="register">@Messages.get("Registro")</a>
+     	<p class="lead">@Messages.get("navegando.anonimo")</p>
 		} else{
 			<p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
-			<a href="/logout">@Messages.get("Salir")</a>
 		}
 	</div>
+
+</div>
+
     </body>
 </html>
