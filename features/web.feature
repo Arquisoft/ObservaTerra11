@@ -1,12 +1,12 @@
 # language: es
-Característica: Página principal
+Característica: Pagina principal
 
-  Como un usuario común
-  Quiero poder navegar por la página principal
-  Para poder conocer las opciones de la aplicación
+  Como un usuario comun
+  Quiero poder navegar por la pagina principal
+  Para poder conocer las opciones de la aplicacion
 
 Escenario: 
     
-	Dado que tengo arrancada la aplicación
-	Cuando voy a la página principal
-	Entonces el título es ObservaTerra
+	Dado que tengo arrancada la aplicacion
+	Cuando voy a la pagina principal
+	Entonces el titulo es ObservaTerra
