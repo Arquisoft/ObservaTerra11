@@ -130,6 +130,8 @@ public class Register extends Controller {
                                                 || specialization.compareTo("") == 0)
                                         return "Error, todos los campos son obligatorios";
                                 // Aqui se añade el usuario
+                                
+                                validado = "Colaborador registrado";
                                 new Collaborator(username, name, password, email, false, phone,
                                                 address, organization, specialization).save();
                         }
@@ -271,14 +273,11 @@ public class Register extends Controller {
  
                 public String validate() {
                         String validado = "";
-                        System.out.println("Entro en business");
                         if (username == null || password == null || name == null || username.compareTo("") == 0 || password.compareTo("") == 0) 
                         	return "Error, todos los campos son obligatorios";    
                         	
                         	validado = "Organización Registrado";
              
-                                        
-                                System.out.println("LLEGUEEEEE");
                                 // TODO Aqui se añade el usuario a la base de datos
                                 new Business(username, name, password, email, false, nif,
                                                 description, phone, address, webSite).save();
