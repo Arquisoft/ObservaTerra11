@@ -19,34 +19,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.*;
 
 public class API extends Controller {
-	
-	public static Result indicators() {
-    	return ok(Json.toJson(Indicator.all()));
-    }
-			
-	public static Result indicators(String code) {
-		return ok(Json.toJson(Country.findByCode(code)));
-	 }
-	
-//	 public static Result updateIndicator(String code) {
-//	    	Indicator previous 	= Indicator.findByCode(code);
-//	    	Indicator newIndicator 	= indicatorForm.bindFromRequest().get();
-//	    	previous.name = newIndicator.name;
-//	    	previous.save();
-//	    	return redirect(routes.API.indicators());
-//	    }
-//	 
-//	 public static Result addIndicator() {
-//		 Indicator indicator = indicatorForm.bindFromRequest().get();
-//	    indicator.save();
-//	    return redirect(routes.API.indicators());
-//	    }
-//	 
-//	 public static Result delIndicator(String code) {
-//	    	Indicator.remove(code);
-//	    	return redirect(routes.API.indicators());
-//	    }
-	
+
     public static Result countries() {
     	return ok(Json.toJson(Country.all()));
     }

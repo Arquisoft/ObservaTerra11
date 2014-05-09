@@ -18,7 +18,7 @@ public class ObservationTest extends WithApplication {
 	
 	@Test
 	public void saveObservation() {
-		Observation obs = null; //new Observation("es","hdi",2.3);
+		Observation obs = new Observation("es","hdi",2.3);
 		obs.save();
 		assertThat(Country.findByName("Spain").code).isEqualTo("es");
 		assertEquals(Observation.all().size(),1);

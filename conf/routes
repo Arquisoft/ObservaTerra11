@@ -4,22 +4,24 @@
 
 GET     /              				controllers.Application.index()
 GET		/country					controllers.Application.showCountries()
-GET		/empIndic					controllers.Application.showIndicators()
+GET		/indicator					controllers.Application.showIndicators()
 GET		/observation				controllers.Application.showObservations()
 GET     /bars/:indicator   			controllers.Application.bars(indicator:String)
 
 
-POST	/country				      controllers.Admin.newCountry()
+POST	/country					controllers.Admin.newCountry()
 POST	/country/delete/:code         controllers.Admin.deleteCountry(code: String)
-POST	/indicator					  controllers.Admin.newIndicator()
+POST	/indicator					controllers.Admin.newIndicator()
 POST	/indicator/delete/:code       controllers.Admin.deleteIndicator(code: String)
 
 
-POST	/observation				  controllers.Admin.newObservation()
+POST	/observation				controllers.Admin.newObservation()
 POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Long)
 
 GET     /login                  	controllers.Login.login()
 POST    /login                      controllers.Login.authenticate()
+
+
 
 GET     /logout                  	controllers.Application.logout()
 GET     /logout                  	controllers.Application.logout()
@@ -32,9 +34,6 @@ POST	/register					controllers.Register.collaboratorRegister()
 
 
 # API 
-
-# links Empleado
-
 
 GET		/api/country					controllers.API.countries()
 GET		/api/country/:code				controllers.API.country(code: String)
