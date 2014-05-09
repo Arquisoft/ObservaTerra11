@@ -1,4 +1,4 @@
-package logic;
+
 import com.google.inject.Inject;
 import cucumber.api.java.Before;
 import play.test.TestBrowser;

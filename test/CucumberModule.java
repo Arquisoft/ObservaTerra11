@@ -1,4 +1,4 @@
-package logic;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 import play.test.TestBrowser;
