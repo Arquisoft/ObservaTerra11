@@ -1,9 +1,9 @@
 # language: es
 Característica: Página principal
 
-  Como un usuario común
-  Quiero poder navegar por la página principal
-  Para poder conocer las opciones de la aplicación
+  Como un usuario comun
+  Quiero poder navegar por la pagina principal
+  Para poder conocer las opciones de la aplicacion
 
 Escenario: 
     

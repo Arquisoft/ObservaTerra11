@@ -16,7 +16,7 @@ public class LoginSteps {
 	@Inject
 	private TestBrowser testBrowser;
 
-	private Login login;
+	private Login login = new Login();
 
 	@Inject
 	@Named("PORT")
@@ -29,18 +29,14 @@ public class LoginSteps {
 
 	@Cuando("^introduzco (.+)$")
 	public void introduzco(String data) throws Throwable {
-		String[] palabras = separar(data);
+		String[] palabras = data.split(" ");
 		login.setUsername(palabras[0]);
 		login.setPassword(palabras[2]);
 	}
 
 	@Entonces("^me logueo con exito$")
-	public void el_título_es(String title) throws Throwable {
-		assertThat(login.validate() == null);
-	}
-
-	private String[] separar(String data) {
-		return data.split(" ");
+	public void me_logueo_con_exito() throws Throwable {
+		assertThat(login.validate().equals("Error"));
 	}
 
 }
