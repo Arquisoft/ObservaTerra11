@@ -15,8 +15,8 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 						width="400" height="400">
 					<!-- Note: you can put any alternative content here. -->
 				</canvas>
+			
 				
-				<div>
 				<canvas id="pieChart" data-processing-sources='@routes.Assets.at("javascripts/pieChart.pde")' 
 						width="400" height="400">
 					<p>Your browser does not support the canvas tag.</p>
@@ -25,12 +25,12 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 				<noscript>
 					<p>JavaScript is required to view the contents of this page.</p>
 				</noscript>
-	    		</div>
+	    
 	    	</div>
 		</div>
 				
 	<script type="application/javascript">
-		 //aqu√≠ se cargar√°n los datos del JSON
+		 //aquÌ se cargar·n los datos del JSON
 		 var values;
 		 //con esto obtenemos el JSON ya parseado y listo para usarse
 		 $.ajax(
@@ -38,7 +38,7 @@ function getProcessingSketchId () { return 'sketch140407a'; }
       	 type: "GET",
       	 url:"/api/observation/indicator/hdi",
     	 dataType: 'json',
-    	 async: false, //MUY IMPORTANTE!!(sin√≥ en Firefox no funcionar√°)
+    	 async: false, //MUY IMPORTANTE!!(sinÛ en Firefox no funcionar·)
          success: function(data){
       			values=data; 
       	 }
