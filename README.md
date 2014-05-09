@@ -1,4 +1,0 @@
-ejemploPlay
-===========
-
-Ejemplo con Play
