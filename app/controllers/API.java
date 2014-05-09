@@ -1,15 +1,28 @@
 package controllers;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import models.Business;
 import models.Country;
 import models.Indicator;
 import models.Observation;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import play.Logger;
 import play.data.Form;
 import play.i18n.Messages;
@@ -96,6 +109,68 @@ public class API extends Controller {
     	return redirect(routes.API.countries());
     }
 
+    public static Result toXML(String i)
+    {
+    	try {
+    	Indicator ind = Indicator.findByCode(i);
+    		
+    	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+ 
+		// root elements
+		Document doc = docBuilder.newDocument();
+		Element rootElement = doc.createElement("indicator");
+		doc.appendChild(rootElement);
+		
+		Attr attr = doc.createAttribute("id");
+		attr.setValue(ind.code);
+		rootElement.setAttributeNode(attr);
+		
+		
+		List<Observation> obs = Observation.all();
+		
+		for(Observation o : obs) {
+			if(o.indicator.code.equals(ind.code)) {
+				Element observacion = doc.createElement("observacion");
+				rootElement.appendChild(observacion);
+		 
+				// set attribute to staff element
+				Attr attr2 = doc.createAttribute("id");
+				attr2.setValue(o.id.toString());
+				observacion.setAttributeNode(attr2);
+				
+				Element country = doc.createElement("country");
+				country.appendChild(doc.createTextNode(o.country.code));
+				observacion.appendChild(country);
+				
+				Element value = doc.createElement("value");
+				value.appendChild(doc.createTextNode(o.obsValue.toString()));
+				observacion.appendChild(value);
+			}
+			
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			
+			String fichero = System.getProperty("user.dir")+"\\app\\controllers\\"+ind.code+".xml";
+			
+			StreamResult result = new StreamResult(new File(fichero));
+	 
+			transformer.transform(source, result);
+				
+	
+		
+			return ok(new java.io.File(fichero));
+		
+		}
+    	} catch(Exception ex)
+    	{
+    		System.out.println(ex.toString());
+    		return redirect(routes.API.countries());
+    	}
+    	return redirect(routes.API.countries()); 
+    }
+    
     public static Result delCountry(String code) {
     	Country.remove(code);
     	return redirect(routes.API.countries());

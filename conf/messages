@@ -10,7 +10,7 @@ Admin				= Admin
 list.countries		= List of Countries
 add.country 		= Add Country
 delete.country 		= Delete Country
-
+navegando.anonimo = You are currectly browsing as an annonymous user, if you register you will be able to access more areas like data modeling or exportation
 Pais = Country
 Indicador = Indicator
 Valor = Value
@@ -19,7 +19,7 @@ agregar.indicador = Add indicador
 agregar.observacion = Add observation
 
 Exportar = Export
-tugrupo = your work group is 
+tugrupo = your profile is 
 
 Login = Login
 Registro = Register
