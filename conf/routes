@@ -8,6 +8,8 @@ GET		/indicator					controllers.Application.showIndicators()
 GET		/observation				controllers.Application.showObservations()
 GET     /bars/:indicator   			controllers.Application.bars(indicator:String)
 
+GET     /api/xml/:indicator   			controllers.API.toXML(indicator:String)
+
 
 POST	/country					controllers.Admin.newCountry()
 POST	/country/delete/:code         controllers.Admin.deleteCountry(code: String)

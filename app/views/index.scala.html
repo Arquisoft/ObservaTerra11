@@ -25,7 +25,7 @@
 <th>@Messages.get("Indicator")</th>
 <th>@Messages.get("Value")</th>
 @if(session().get("id")!=null) {
-					<th>Export</th>
+					<th>@Messages.get("Exportar")</th>
 					
 				}
 					
@@ -54,23 +54,18 @@
 }
 </ul>
 }
+
+
 			@if(session().get("id")!=null){
 				@if(session().get("type").contains("business")) {
-					<li><a href="addIndicator">Agregar indicadores</a>
-					<li><a href="addObservation">Agregar observaciones</a>			
+					<li><a href="addIndicator">@Messages.get("agregar.indicador")</a>
+					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>			
 	 			}
  			}
  			
  			@if(session().get("id")!=null){
 				@if(session().get("type").contains("collaborator")) {
-					<li><a href="addObservation">Agregar observaciones</a>			
-	 			}
- 			}
- 			
- 			@if(session().get("id")!=null){
-				@if(session().get("type").contains("admin")) {
-					<li><a href="addIndicator">Agregar indicadores</a>
-					<li><a href="addObservation">Agregar observaciones</a>			
+					<li><a href="addObservation">@Messages.get("agregar.observacion")</a>			
 	 			}
  			}
 
@@ -80,9 +75,9 @@
     <nav>
     @Messages.get("Admin")
     <ul>
-    <li><a href="@routes.Application.showCountries">Countries</a>
-	<li><a href="@routes.Application.showIndicators">Indicators</a>
-	<li><a href="@routes.Application.showObservations">Observations</a>
+    <li><a href="@routes.Application.showCountries">@Messages.get("Paises")</a>
+	<li><a href="@routes.Application.showIndicators">@Messages.get("Indicadores")</a>
+	<li><a href="@routes.Application.showObservations">@Messages.get("Observaciones")</a>
 	</ul>
     </nav>
     </footer>
@@ -90,14 +85,13 @@
  }
 <div id="session">
      @if(session().get("id")==null){
-		<li><a href="login">Login</a>
-		<li><a href="register">Register</a>
+     	<p>@Messages.get("navegando.anonimo")</p>
+		<li><a href="/login">@Messages.get("Login")</a>
+		<li><a href="register">@Messages.get("Registro")</a>
 		} else{
-			<p>Bienvenido @{session().get("id")}</p>
-			<a href="/logout">Log out</a>
+			<p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
+			<a href="/logout">@Messages.get("Salir")</a>
 		}
 	</div>
-	
-
     </body>
 </html>
