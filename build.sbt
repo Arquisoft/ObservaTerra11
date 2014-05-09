@@ -19,13 +19,6 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-all" % "1.9.5" % "test"
 )     
 
-val main = play.Project(appName, appVersion, appDependencies)
-  .settings(CucumberPlugin.cucumberSettings: _*)
-  .settings(
-    CucumberPlugin.cucumberFeaturesLocation := "cucumber",
-    CucumberPlugin.cucumberStepsBasePackage := "cucumber.steps"
-  )
-
 play.Project.playJavaSettings
 
 site.settings
