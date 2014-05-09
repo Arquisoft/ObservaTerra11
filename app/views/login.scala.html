@@ -1,0 +1,37 @@
+@(form: Form[Login])
+ 
+@import play.i18n._
+ 
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+    </head>
+    <body>
+        <header>
+        </header>
+    @helper.form(routes.Login.authenticate) {
+   <h1>@Messages.get("signin")</h1>
+ 
+   <p>
+        <label for="lusername">@Messages.get("username")</label>
+       <input type="text" name="username" value="@form("username").value" id="username">
+   </p>
+   <p>
+        <label for="lpassword">@Messages.get("password")</label>
+       <input type="password" name="password" value="@form("password").value"id="password">
+   </p>
+   <p>
+       <button type="submit">Login</button>
+   </p>
+   @if(form.hasGlobalErrors) {
+    <p class="error">
+        @form.globalError.message
+    </p>
+}
+}
+ 
+ 
+<div><a href="/">@Messages.get("back")</a></div>
+    </body>
+</html>

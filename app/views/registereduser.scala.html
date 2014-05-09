@@ -1,0 +1,51 @@
+@(observations: List[Observation], countries: List[Country], indicators: List[Indicator])
+
+@import play.i18n._
+
+
+<html>
+    <head>
+        <title>Aqui pondriamos por jemplo el nombre del usuario con arrroba</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+        <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <header>
+        <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
+        <h1>ObservaTerra</h1></a>
+     </header>
+<h1>@Messages.get("Welcome")</h1>
+<h2>@Messages.get("list.observations")</h2>
+<table>
+<tr>	
+<th>@Messages.get("Country")</th>
+<th>@Messages.get("Indicator")</th>
+<th>@Messages.get("Value")Value</th>
+</tr>
+@for(observation <- observations) {
+	<tr>
+	<td>@observation.country.name</td>
+	<td>@observation.indicator.name</td>
+	<td>@observation.obsValue</td>
+	</tr> 
+}
+</table>
+
+<h2>@Messages.get("Bar.chart")</h2>
+<ul>
+@for(indicator <- indicators) {
+
+ <li><a href="@routes.Application.bars(indicator.code)">@indicator.name</a></li>
+	
+}
+</ul>
+
+
+
+
+<li><a href="login">Logout sin implementar</a>
+    </body>
+</html>

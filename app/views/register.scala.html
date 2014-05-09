@@ -1,0 +1,172 @@
+
+@(typeForm: Form[Register.TypeRegister], form: Form[Register.UserRegister], businessForm: Form[Register.BusinessRegister], collaboratorForm: Form[Register.CollaboratorRegister])
+ 
+@import play.i18n._
+ 
+<html>
+    <head>
+        <title>@Messages.get("Registro")</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+    </head>
+    <body>
+        <header>
+        </header>
+@helper.form(routes.Register.isValid()) {
+        <h1>@Messages.get("register")</h1>
+       
+        <div>
+                <label for="type">@Messages.get("type")</label>
+                <select name="type" value="@typeForm("type").value" id="type">
+                        <option value="empty"></option>
+                        <option value="user">@Messages.get("typeUser")</option>
+                        <option value="collaborator">@Messages.get("typeCollaborator")</option>
+                        <option value="business">@Messages.get("typeBusiness")</option>
+                </select>
+        </div>
+   
+        <div>
+                <button type="submit">@Messages.get("selectRegister")</button>
+        </div>
+       
+        @if(typeForm.hasGlobalErrors) {
+        <p class="error">
+            @typeForm.globalError.message
+                </p>
+                }
+}
+ 
+@if(session().get("typeRegister")=="user"){
+        @helper.form(routes.Register.userRegister()) {
+ 
+        <div>
+                <label for="lusername">@Messages.get("username")</label>
+                <input type="text" name="username" value="@form("username").value" id="username">
+        </div>
+        <div>
+                <label for="lpassword">@Messages.get("password")</label>
+                <input type="password" name="password" value="@form("password").value"id="password">
+        </div>
+        <div>
+                <label for="lname">@Messages.get("name")</label>
+                <input type="text" name="name" value="@form("name").value" id="name">
+        </div>
+        <div>
+                <label for="email">@Messages.get("email")</label>
+                <input type="email" name="email" value="@form("email").value"id="email">
+        </div>
+   
+   <div>
+       <button type="submit">@Messages.get("register")</button>
+   </div>
+   
+        @if(form.hasGlobalErrors) {
+                <p class="error">
+                @form.globalError.message
+        </p>
+                }
+        }      
+}
+ 
+@if(session().get("typeRegister")=="collaborator"){
+        @helper.form(routes.Register.collaboratorRegister()) {
+ 
+        <div>
+                <label for="lusername">@Messages.get("username")</label>
+                <input type="text" name="username" value="@collaboratorForm("username").value" id="username">
+        </div>
+        <div>
+                <label for="lpassword">@Messages.get("password")</label>
+                <input type="password" name="password" value="@collaboratorForm("password").value"id="password">
+        </div>
+        <div>
+                <label for="lname">@Messages.get("name")</label>
+                <input type="text" name="name" value="@collaboratorForm("name").value" id="name">
+        </div>
+        <div>
+                <label for="email">@Messages.get("email")</label>
+                <input type="email" name="email" value="@collaboratorForm("email").value"id="email">
+        </div>
+        <div>
+                <label for="phone">@Messages.get("phone")</label>
+                <input type="number" name="phone" value="@collaboratorForm("phone").value"id="phone">
+        </div>
+        <div>
+                <label for="laddress">@Messages.get("address")</label>
+                <input type="text" name="address" value="@collaboratorForm("address").value"id="address">
+        </div>
+   <div>
+                <label for="organization">@Messages.get("organization")</label>
+                <input type="text" name="organization" value="@collaboratorForm("organization").value"id="organization">
+        </div>
+        <div>
+                <label for="specialization">@Messages.get("specialization")</label>
+                <input type="text" name="specialization" value="@collaboratorForm("specialization").value"id="specialization">
+        </div>
+   
+   <div>
+       <button type="submit">@Messages.get("register")</button>
+   </div>
+   
+        @if(collaboratorForm.hasGlobalErrors) {
+                <p class="error">
+                @collaboratorForm.globalError.message
+        </p>
+                }
+        }      
+}
+ 
+@if(session().get("typeRegister")=="business"){
+        @helper.form(routes.Register.businessRegister()) {
+ 
+        <div>
+                <label for="lusername">@Messages.get("username")</label>
+                <input type="text" name="username" value="@businessForm("username").value" id="username">
+        </div>
+        <div>
+                <label for="lpassword">@Messages.get("password")</label>
+                <input type="password" name="password" value="@businessForm("password").value"id="password">
+        </div>
+        <div>
+                <label for="lname">@Messages.get("name")</label>
+                <input type="text" name="name" value="@businessForm("name").value" id="name">
+        </div>
+        <div>
+                <label for="email">@Messages.get("email")</label>
+                <input type="email" name="email" value="@businessForm("email").value"id="email">
+        </div>
+        <div>
+                <label for="phone">@Messages.get("phone")</label>
+                <input type="number" name="phone" value="@businessForm("phone").value"id="phone">
+        </div>
+        <div>
+                <label for="laddress">@Messages.get("address")</label>
+                <input type="text" name="address" value="@businessForm("address").value"id="address">
+        </div>
+   <div>
+                <label for="description">@Messages.get("description")</label>
+                <input type="text" name="description" value="@businessForm("description").value"id="description">
+        </div>
+        <div>
+                <label for="webSite">@Messages.get("webSite")</label>
+                <input type="text" name="webSite" value="@businessForm("webSite").value"id="webSite">
+        </div>
+        <div>
+                <label for="nif">@Messages.get("nif")</label>
+                <input type="text" name="nif" value="@businessForm("nif").value"id="nif">
+        </div>
+ 
+   <div>
+       <button type="submit">@Messages.get("register")</button>
+   </div>
+   
+        @if(businessForm.hasGlobalErrors) {
+                <p class="error">
+                @businessForm.globalError.message
+        </p>
+                }
+        }      
+}
+ 
+<div><a href="/">@Messages.get("back")</a></div>
+    </body>
+</html>
