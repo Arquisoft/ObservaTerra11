@@ -48,6 +48,11 @@ GET		/api/observation						controllers.API.observations()
 GET		/api/observation/indicator/:indicator	controllers.API.observationsByIndicator(indicator: String)
 GET		/api/observation/country/:country		controllers.API.observationsByCountry(country: String)
 
+
+GET		/api/observation/:country/:indicator	controllers.API.observationsByIndicatorAndCountry(country:String, indicator: String)
+
+
+
 POST	/api/observation/:country/:indicator	controllers.API.addObservation(country:String, indicator: String)
 DELETE	/api/observation/:country/:indicator	controllers.API.delObservation(country:String, indicator: String)
 
