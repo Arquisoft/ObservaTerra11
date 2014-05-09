@@ -7,6 +7,7 @@
     <head>
         <title>ObservaTerra</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
         <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
@@ -85,10 +86,12 @@
  }
 <div id="session">
      @if(session().get("id")==null){
+     	<br/>
      	<p>@Messages.get("navegando.anonimo")</p>
 		<li><a href="/login">@Messages.get("Login")</a>
 		<li><a href="register">@Messages.get("Registro")</a>
 		} else{
+		<br/>
 			<p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
 			<a href="/logout">@Messages.get("Salir")</a>
 		}
