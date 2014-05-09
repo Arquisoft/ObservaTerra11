@@ -1,9 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\application.conf,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\application.conf)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\evolutions,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\evolutions)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\initial-data.yml,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\initial-data.yml)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\messages,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\messages)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\messages.es,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\messages.es)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\routes,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\routes)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\evolutions\default,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\evolutions\default)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Blacky\Documents\GitHub\ObservaTerra11\conf\evolutions\default\1.sql,C:\Users\Blacky\Documents\GitHub\ObservaTerra11\target\scala-2.10\classes\evolutions\default\1.sql)[0m
