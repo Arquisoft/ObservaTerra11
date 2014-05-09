@@ -14,12 +14,14 @@ POST	/country/delete/:code         controllers.Admin.deleteCountry(code: String)
 POST	/indicator					controllers.Admin.newIndicator()
 POST	/indicator/delete/:code       controllers.Admin.deleteIndicator(code: String)
 
-
+GET /api/col							controllers.API.collaborator()
 POST	/observation				controllers.Admin.newObservation()
 POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Long)
 
 GET     /login                  	controllers.Login.login()
 POST    /login                      controllers.Login.authenticate()
+
+GET     /addIn                  	controllers.Login.login()
 
 
 
