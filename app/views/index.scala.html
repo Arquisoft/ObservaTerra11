@@ -23,17 +23,28 @@
 <tr>	
 <th>@Messages.get("Country")</th>
 <th>@Messages.get("Indicator")</th>
-<th>@Messages.get("Value")Value</th>
+<th>@Messages.get("Value")</th>
+@if(session().get("id")!=null) {
+					<th>Export</th>
+					
+				}
+					
 </tr>
 @for(observation <- observations) {
 	<tr>
 	<td>@observation.country.name</td>
 	<td>@observation.indicator.name</td>
 	<td>@observation.obsValue</td>
+	@if(session().get("id")!=null) {
+					<td><a href="/api/observation/@observation.country.code/@observation.indicator.code">Exportar como Json</a></td>
+					
+				}
 	</tr> 
 }
 </table>
 
+
+@if(session().get("id") != null){
 <h2>@Messages.get("Bar.chart")</h2>
 <ul>
 @for(indicator <- indicators) {
@@ -42,7 +53,41 @@
 	
 }
 </ul>
+}
+			@if(session().get("id")!=null){
+				@if(session().get("type").contains("business")) {
+					<li><a href="addIndicator">Agregar indicadores</a>
+					<li><a href="addObservation">Agregar observaciones</a>			
+	 			}
+ 			}
+ 			
+ 			@if(session().get("id")!=null){
+				@if(session().get("type").contains("collaborator")) {
+					<li><a href="addObservation">Agregar observaciones</a>			
+	 			}
+ 			}
+ 			
+ 			@if(session().get("id")!=null){
+				@if(session().get("type").contains("admin")) {
+					<li><a href="addIndicator">Agregar indicadores</a>
+					<li><a href="addObservation">Agregar observaciones</a>			
+	 			}
+ 			}
 
+	@if(session().get("id")!=null){
+				@if(session().get("type").contains("admin")) {
+    <footer>
+    <nav>
+    @Messages.get("Admin")
+    <ul>
+    <li><a href="@routes.Application.showCountries">Countries</a>
+	<li><a href="@routes.Application.showIndicators">Indicators</a>
+	<li><a href="@routes.Application.showObservations">Observations</a>
+	</ul>
+    </nav>
+    </footer>
+ }
+ }
 <div id="session">
      @if(session().get("id")==null){
 		<li><a href="login">Login</a>

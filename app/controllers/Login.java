@@ -58,7 +58,7 @@ public class Login extends Controller{
         private boolean validarColaborador() {
 //              session().isDirty = true;
                 Collaborator colaborador = Collaborator.findByLogin(username);
-                if (colaborador != null && colaborador.active == true
+                if (colaborador != null //&& colaborador.active == true
                                 && colaborador.password.compareTo(password) == 0) {
                         session().put("id", colaborador.id);
                         session().put("name", colaborador.name);
@@ -81,7 +81,7 @@ public class Login extends Controller{
         private boolean validarBusiness() {
 //              session().isDirty = true;
                 Business business = Business.findByLogin(username);
-                if (business != null && business.active == true
+                if (business != null //&& business.active == true
                                 && business.password.compareTo(password) == 0) {
                         session().put("id", business.id);
                         session().put("name", business.name);

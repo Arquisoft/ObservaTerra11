@@ -27,9 +27,12 @@ public class Register extends Controller {
         }
  
         public static Result isValid() {
+        	if(session().get("typeRegister").equals("user"))
                 regUser = Form.form(UserRegister.class).bindFromRequest();
                 regType = Form.form(TypeRegister.class).bindFromRequest();
+                if(session().get("typeRegister").equals("business"))
                 regBus = Form.form(BusinessRegister.class).bindFromRequest();
+                if(session().get("typeRegister").equals("collaborator"))
                 regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
                 if (regType.hasErrors()) {
                         return badRequest(register.render(regType, regUser, regBus, regCol));
@@ -42,8 +45,8 @@ public class Register extends Controller {
         public static Result userRegister() {
                 regUser = Form.form(UserRegister.class).bindFromRequest();
                 regType = Form.form(TypeRegister.class).bindFromRequest();
-                regBus = Form.form(BusinessRegister.class).bindFromRequest();
-                regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
+              //  regBus = Form.form(BusinessRegister.class).bindFromRequest();
+              //  regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
                 if (regUser.hasErrors()) {
                         return badRequest(register.render(regType, regUser, regBus, regCol));
                 } else {
@@ -54,9 +57,9 @@ public class Register extends Controller {
         }
  
         public static Result collaboratorRegister() {
-                regUser = Form.form(UserRegister.class).bindFromRequest();
+           //     regUser = Form.form(UserRegister.class).bindFromRequest();
                 regType = Form.form(TypeRegister.class).bindFromRequest();
-                regBus = Form.form(BusinessRegister.class).bindFromRequest();
+             //   regBus = Form.form(BusinessRegister.class).bindFromRequest();
                 regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
                 if (regCol.hasErrors()) {
                         return badRequest(register.render(regType, regUser, regBus, regCol));
@@ -68,10 +71,10 @@ public class Register extends Controller {
         }
  
         public static Result businessRegister() {
-                regUser = Form.form(UserRegister.class).bindFromRequest();
+              //  regUser = Form.form(UserRegister.class).bindFromRequest();
                 regType = Form.form(TypeRegister.class).bindFromRequest();
                 regBus = Form.form(BusinessRegister.class).bindFromRequest();
-                regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
+               // regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
  
                 if (regBus.hasErrors()) {
                         return badRequest(register.render(regType, regUser, regBus, regCol));
@@ -83,10 +86,22 @@ public class Register extends Controller {
         }
  
         public static Result register() {
+        	session().put("typeRegister", "test");
+        	
+        	
+        	
+        	
+        	if(session().get("typeRegister").equals("user"))
                 regUser = Form.form(UserRegister.class).bindFromRequest();
-                regType = Form.form(TypeRegister.class).bindFromRequest();
+        	
+                
+        	else if(session().get("typeRegister").equals("business"))
                 regBus = Form.form(BusinessRegister.class).bindFromRequest();
+        	else if(session().get("typeRegister").equals("collaborator"))
                 regCol = Form.form(CollaboratorRegister.class).bindFromRequest();
+                
+                regType = Form.form(TypeRegister.class).bindFromRequest();
+            	
  
                 return ok(register.render(regType, regUser, regBus, regCol));
         }
@@ -194,8 +209,9 @@ public class Register extends Controller {
                 public String email;
  
                 public String validate() {
+                		
                         String validado = "";
- 
+                        
                         if (username != null && password != null && name != null
                                         && email != null) {
                                 validado = "Usuario Registrado";
@@ -255,22 +271,18 @@ public class Register extends Controller {
  
                 public String validate() {
                         String validado = "";
- 
-                        if (username != null && password != null && name != null
-                                        && email != null && nif != null && description != null
-                                        && phone != null && address != null && webSite != null) {
-                                validado = "Organización Registrado";
-                                if (username.compareTo("") == 0 || password.compareTo("") == 0
-                                                || name.compareTo("") == 0 || email.compareTo("") == 0
-                                                || description.compareTo("") == 0
-                                                || phone.compareTo("") == 0
-                                                || address.compareTo("") == 0
-                                                || webSite.compareTo("") == 0)
-                                        return "Error, todos los campos son obligatorios";
+                        System.out.println("Entro en business");
+                        if (username == null || password == null || name == null || username.compareTo("") == 0 || password.compareTo("") == 0) 
+                        	return "Error, todos los campos son obligatorios";    
+                        	
+                        	validado = "Organización Registrado";
+             
+                                        
+                                System.out.println("LLEGUEEEEE");
                                 // TODO Aqui se añade el usuario a la base de datos
                                 new Business(username, name, password, email, false, nif,
                                                 description, phone, address, webSite).save();
-                        }
+                        
                         return validado;
  
                 }
@@ -350,7 +362,7 @@ public class Register extends Controller {
  
         public static class TypeRegister {
                 public String type;
- 
+                
                 public String validate() {
                         String validado = "";
  

@@ -14,13 +14,16 @@ POST	/country/delete/:code         controllers.Admin.deleteCountry(code: String)
 POST	/indicator					controllers.Admin.newIndicator()
 POST	/indicator/delete/:code       controllers.Admin.deleteIndicator(code: String)
 
-
+GET /api/col							controllers.API.collaborator()
 POST	/observation				controllers.Admin.newObservation()
 POST	/observation/delete/:code     controllers.Admin.deleteObservation(code: Long)
 
 GET     /login                  	controllers.Login.login()
 POST    /login                      controllers.Login.authenticate()
 
+GET     /addIndicator                  	controllers.Application.addIndicator()
+
+GET     /addObservation                 	controllers.Application.addObservation()
 
 
 GET     /logout                  	controllers.Application.logout()
@@ -44,6 +47,11 @@ DELETE	/api/country/:code				controllers.API.delCountry(code: String)
 GET		/api/observation						controllers.API.observations()
 GET		/api/observation/indicator/:indicator	controllers.API.observationsByIndicator(indicator: String)
 GET		/api/observation/country/:country		controllers.API.observationsByCountry(country: String)
+
+
+GET		/api/observation/:country/:indicator	controllers.API.observationsByIndicatorAndCountry(country:String, indicator: String)
+
+
 
 POST	/api/observation/:country/:indicator	controllers.API.addObservation(country:String, indicator: String)
 DELETE	/api/observation/:country/:indicator	controllers.API.delObservation(country:String, indicator: String)
