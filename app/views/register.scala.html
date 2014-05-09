@@ -36,8 +36,7 @@
          <li><a href="/login">@Messages.get("Login")</a>
          <li class="active"><a>@Messages.get("Registro")</a>
          } else{
-           <p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
-           <a href="/logout">@Messages.get("Salir")</a>
+            <li><a href="/logout">@Messages.get("Salir")</a></li>
          }
         </ul>
         </div>
@@ -45,6 +44,7 @@
     </div>
 
     <div id="session">
+    <br/>
 
         @helper.form(routes.Register.isValid()) {
       <div class="page-header">

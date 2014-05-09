@@ -34,11 +34,10 @@
      <ul class="nav navbar-nav">
        <li><a href="/">@Messages.get("back")</a></li>
        @if(session().get("id")==null){
-      <li class="active"><a>@Messages.get("Login")</a>
+      <li><a>@Messages.get("Login")</a>
       <li><a href="register">@Messages.get("Registro")</a>
       } else{
-        <p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
-        <a href="/logout">@Messages.get("Salir")</a>
+        <li><a href="/logout">@Messages.get("Salir")</a></li>
       }
      </ul>
      </div>
@@ -63,10 +62,17 @@
 	</ul>
     </nav>
     </footer>
-    <div><a href="/">@Messages.get("back")</a></div>
     }
     }
   </div>
+  <div id="session">
+     @if(session().get("id")==null){
+     	<p class="lead">@Messages.get("navegando.anonimo")</p>
+		} else{
+		<br/>
+			<p> @Messages.get("Welcome") @session().get("id"), @Messages.get("tugrupo") @session().get("type")</p>
+		}
+	</div>
   </div>
     </body>
 </html>
