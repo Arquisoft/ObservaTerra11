@@ -62,9 +62,20 @@
 	 			}
  			}
 
-
-@session().get("type")
-
+	@if(session().get("id")!=null){
+				@if(session().get("type").contains("admin")) {
+    <footer>
+    <nav>
+    @Messages.get("Admin")
+    <ul>
+    <li><a href="@routes.Application.showCountries">Countries</a>
+	<li><a href="@routes.Application.showIndicators">Indicators</a>
+	<li><a href="@routes.Application.showObservations">Observations</a>
+	</ul>
+    </nav>
+    </footer>
+ }
+ }
 <div id="session">
      @if(session().get("id")==null){
 		<li><a href="login">Login</a>
