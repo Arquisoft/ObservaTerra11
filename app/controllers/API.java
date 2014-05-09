@@ -130,6 +130,7 @@ public class API extends Controller {
 			List<Observation> obs = Observation.all();
 
 			for (Observation o : obs) {
+				System.out.println("codigo: " + o.indicator.code + " cod: " + ind.code);
 				if (o.indicator.code.equals(ind.code)) {
 					Element observacion = doc.createElement("observacion");
 					rootElement.appendChild(observacion);
@@ -147,7 +148,9 @@ public class API extends Controller {
 					value.appendChild(doc.createTextNode(o.obsValue.toString()));
 					observacion.appendChild(value);
 				}
+			}
 
+				
 				TransformerFactory transformerFactory = TransformerFactory
 						.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
@@ -162,12 +165,11 @@ public class API extends Controller {
 
 				return ok(new java.io.File(fichero));
 
-			}
+			
 		} catch (Exception ex) {
 			System.out.println(ex.toString());
 			return redirect(routes.API.countries());
 		}
-		return redirect(routes.API.countries());
 	}
 
 	public static Result delCountry(String code) {

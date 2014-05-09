@@ -10,7 +10,7 @@
 function getProcessingSketchId () { return 'sketch140407a'; }
 </script>
 		<div id="content">
-			<div>
+
 				<canvas id="sketch140407a" data-processing-sources='@routes.Assets.at("javascripts/sketch_140407a.pde")' 
 						width="400" height="400">
 					<!-- Note: you can put any alternative content here. -->
@@ -22,13 +22,15 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 					<p>Your browser does not support the canvas tag.</p>
 					<!-- Note: you can put any alternative content here. -->
 				</canvas>
-				<noscript>
-					<p>JavaScript is required to view the contents of this page.</p>
-				</noscript>
-	    	</div>
-	    		    	<p><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></p>
-					<p><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></p>
+
+	    		<ul><li><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></li>
+	    		
+				<li><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></li>
+				</ul>   			
+	    		
 		</div>
+		
+
 				
 	<script type="application/javascript">
 		 //aqu� se cargar�n los datos del JSON
@@ -46,6 +48,7 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 	   });  
     </script>
 
-<br/>
+@if(session().get("type") != "admin"){
 <div><a href="/">@Messages.get("back")</a></div>
+}
 }
