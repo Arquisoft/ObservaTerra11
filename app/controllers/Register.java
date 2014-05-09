@@ -203,7 +203,7 @@ public class Register extends Controller {
                                                 || name.compareTo("") == 0 || email.compareTo("") == 0)
                                         return "Error, todos los campos son obligatorios";
                                 // TODO Aqui se añade el usuario a la base de datos
-                                new User(username, name, password, email, "Empleado", false).save();
+                                new User(username, name, password, email, "user", false).save();
                         }
                         return validado;
  

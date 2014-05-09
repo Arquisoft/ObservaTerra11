@@ -24,8 +24,9 @@ public class ObservacionesSteps {
 		for (ObservationRow obs : observations) {
 			Country country = new Country(obs.country,obs.country);
 			Indicator ind = new Indicator(obs.indicator,obs.indicator);
-			observationList.add(null
-			);//new Observation(country, ind, obs.value)
+			observationList.add(
+				new Observation(country, ind, obs.value)
+			);
         }
 	}
 
@@ -49,7 +50,7 @@ public class ObservacionesSteps {
 		observationList = new ArrayList<Observation>();
 		Country country = new Country(nombre,nombre);
 		Indicator ind   = new Indicator(indicator,indicator);
-		observationList.add(null);//new Observation(country, ind, value)
+		observationList.add(new Observation(country, ind, value));
 	}
 
 	public static class ObservationRow {
