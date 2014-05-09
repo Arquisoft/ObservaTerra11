@@ -18,6 +18,8 @@ Registro = Regístrate
 agregar.indicador = Agregar indicador
 agregar.observacion = Agregar observación
 
+back = Volver
+
 exportar.json = Exportar como archivo en formato Json
 exportar.xml = Exportar como archivo en formato XML
 
