@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(form: Form[Indicator])
 
 @import play.i18n._
 
@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>@title</title>
+        <title>Anadir indicador</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bars.css")' >
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -17,26 +17,19 @@
         <a href="/"><img src="@routes.Assets.at("images/observaTerra.png")" alt="ObservaTerraLogo" />
         <h1>ObservaTerra</h1></a>
      </header>
-     <h1>@title</h1>    
+     <h1>Anadir</h1>    
 
-     @content
-
-@if(session().get("id") != null) {
-@if(session().get("type").equals("admin")){
-    <footer>
-    <nav>
-    @Messages.get("Admin")
-    <ul>
+<h2>@{Messages.get("add.indicator")}</h2>
     
-    
-    <li><a href="@routes.Application.showCountries">Countries</a>
-	<li><a href="@routes.Application.showIndicators">Indicators</a>
-	<li><a href="@routes.Application.showObservations">Observations</a>
-	</ul>
-    </nav>
-    </footer>
-    <div><a href="/">@Messages.get("back")</a></div>
-    }
-    }
+	@helper.form(action = routes.Admin.newIndicator()) {
+	
+	    @helper.inputText(form("code")) 
+	    @helper.inputText(form("name")) 
+        
+        <input type="submit" value="@{Messages.get("create")}">
+        
+    }  
+	
+	<div><a href="/">@Messages.get("back")</a></div>
     </body>
 </html>
