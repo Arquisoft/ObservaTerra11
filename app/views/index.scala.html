@@ -47,11 +47,29 @@
      @if(session().get("id")==null){
 		<li><a href="login">Login</a>
 		<li><a href="register">Register</a>
-		} else{
-			<p>Bienvenido @{session().get("id")}</p>
-			<a href="/logout">Log out</a>
+		} 
+	@if(session().get("type") != null) {	
+		@if(session().get("type") == "Empleado") {
+			<li><a href="empAdIndic">agregar indicadores</a>
+			<li><a href="empDelIndic">borrar indicadores</a>
+		
 		}
-	</div>
+		
+		@if(session().get("type") == "AdminOng") {
+			<li><a href="adminOngfuncion1">adminOngfuncion1</a>
+			<li><a href="adminOngfuncion2">adminOngfuncion2</a>
+		
+		}
+		@if(session().get("type") == "Admin") {
+			<li><a href="adminfuncion1">adminfuncion1</a>
+			<li><a href="adminfuncion2">adminfuncion2</a>
+		
+		}
+			
+		<li><p>Bienvenido @{session().get("id")}</p></li>
+		<li><a href="/logout">Log out</a></li>
+	}
+		</div>
 	
 
     </body>
