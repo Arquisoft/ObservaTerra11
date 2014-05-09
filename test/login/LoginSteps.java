@@ -36,7 +36,7 @@ public class LoginSteps {
 
 	@Entonces("^me logueo con exito$")
 	public void me_logueo_con_exito() throws Throwable {
-		assertThat(login.validate().equals("Error"));
+		assertThat(login.validate() == null);
 	}
 
 }
