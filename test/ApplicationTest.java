@@ -30,11 +30,11 @@ import play.test.WithApplication;
 import models.*;
 
 /**
-*
-* Simple (JUnit) tests that can call all parts of a play app.
-* If you are interested in mocking a whole application, see the wiki for more details.
-*
-*/
+ * 
+ * Simple (JUnit) tests that can call all parts of a play app. If you are
+ * interested in mocking a whole application, see the wiki for more details.
+ * 
+ */
 public class ApplicationTest extends WithApplication {
 
 	@Before
@@ -46,17 +46,18 @@ public class ApplicationTest extends WithApplication {
 		Map<String, Object> argData = Collections.emptyMap();
 		Long id = 2L;
 		play.api.mvc.RequestHeader header = mock(play.api.mvc.RequestHeader.class);
-        Http.Request request = mock(Http.Request.class);
-		Http.Context context = new Http.Context(id, header, request, flashData, flashData, argData);
+		Http.Request request = mock(Http.Request.class);
+		Http.Context context = new Http.Context(id, header, request, flashData,
+				flashData, argData);
 		Http.Context.current.set(context);
 	}
-    
-	
+
 	@Test
-    public void renderIndex() {
-        Content html = views.html.index.render(Observation.all(),Country.all(),Indicator.all());
-        assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("ObservaTerra"); 
-    }
+	public void renderIndex() {
+		Content html = views.html.index.render(Observation.all(),
+				Country.all(), Indicator.all());
+		assertThat(contentType(html)).isEqualTo("text/html");
+		assertThat(contentAsString(html)).contains("ObservaTerra");
+	}
 
 }
