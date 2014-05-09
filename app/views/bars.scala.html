@@ -25,8 +25,9 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 				<noscript>
 					<p>JavaScript is required to view the contents of this page.</p>
 				</noscript>
-	    
 	    	</div>
+	    		    	<p><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></p>
+					<p><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></p>
 		</div>
 				
 	<script type="application/javascript">
@@ -43,20 +44,8 @@ function getProcessingSketchId () { return 'sketch140407a'; }
       			values=data; 
       	 }
 	   });  
-	   
     </script>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<p><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></p>
-<p><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></p>
-
 
 <br/>
-<br/>
-
 <div><a href="/">@Messages.get("back")</a></div>
 }
