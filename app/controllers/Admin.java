@@ -28,15 +28,27 @@ public class Admin extends Controller {
     
     public static Result newIndicator() {
       Form<Indicator> form = indicatorForm.bindFromRequest();
-  	  if(form.hasErrors()) {
+  	  if(form.hasErrors() && session().get("type").equals("admin")) {
   	    return badRequest(
   	      views.html.indicator.render(Indicator.all(),indicatorForm)
   	    );
-  	  } else {
+  	  }
+  	    else if(form.hasErrors() && session().get("type").equals("collaborator")) {
+    	  	    return badRequest(
+    	  	      views.html.addIndicator.render(indicatorForm)
+    	  	    );
+  	  } else if(session().get("type").equals("admin")) {
   		Indicator ind = form.get();
   	    Indicator.create(ind);
   	    return redirect(routes.Application.showIndicators());  
-  	  }    
+  	  } else if(session().get("type").equals("collaborator")) {
+    		Indicator ind = form.get();
+      	    Indicator.create(ind);
+      	    return redirect(routes.Application.addIndicator());  
+  	  }
+  	  else {
+  	    return redirect(routes.Application.index());  
+  	  }
     }
     
     public static Result deleteIndicator(String code) {
