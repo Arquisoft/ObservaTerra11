@@ -10,7 +10,7 @@
 function getProcessingSketchId () { return 'sketch140407a'; }
 </script>
 		<div id="content">
-			<div>
+
 				<canvas id="sketch140407a" data-processing-sources='@routes.Assets.at("javascripts/sketch_140407a.pde")' 
 						width="400" height="400">
 					<!-- Note: you can put any alternative content here. -->
@@ -22,41 +22,33 @@ function getProcessingSketchId () { return 'sketch140407a'; }
 					<p>Your browser does not support the canvas tag.</p>
 					<!-- Note: you can put any alternative content here. -->
 				</canvas>
-				<noscript>
-					<p>JavaScript is required to view the contents of this page.</p>
-				</noscript>
-	    
-	    	</div>
+
+	    		<ul><li><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></li>
+	    		
+				<li><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></li>
+				</ul>   			
+	    		
 		</div>
+		
+
 				
 	<script type="application/javascript">
-		 //aquí se cargarán los datos del JSON
+		 //aquï¿½ se cargarï¿½n los datos del JSON
 		 var values;
 		 //con esto obtenemos el JSON ya parseado y listo para usarse
 		 $.ajax(
       	 { 
       	 type: "GET",
-      	 url:"/api/observation/indicator/hdi",
+      	 url:"/api/observation/indicator/"+"@indicator.code",
     	 dataType: 'json',
-    	 async: false, //MUY IMPORTANTE!!(sinó en Firefox no funcionará)
+    	 async: false, //MUY IMPORTANTE!!(sinï¿½ en Firefox no funcionarï¿½)
          success: function(data){
       			values=data; 
       	 }
 	   });  
-	   
     </script>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
-<p><a href="/api/observation/indicator/@indicator.code">@Messages.get("exportar.json")</a></p>
-<p><a href="/api/xml/@indicator.code">@Messages.get("exportar.xml")</a></p>
-
-
-<br/>
-<br/>
-
+@if(session().get("type") != "admin"){
 <div><a href="/">@Messages.get("back")</a></div>
+}
 }
