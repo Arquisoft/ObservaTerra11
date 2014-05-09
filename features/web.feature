@@ -1,5 +1,5 @@
 # language: es
-Característica: Página principal
+Característica: Pagina principal
 
   Como un usuario comun
   Quiero poder navegar por la pagina principal

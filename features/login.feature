@@ -1,5 +1,5 @@
 # language: es
-Característica: Página principal
+Característica: Pagina login
 
   Como un usuario comun
   Quiero poder loguearme
