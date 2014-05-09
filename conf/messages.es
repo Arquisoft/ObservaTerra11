@@ -18,6 +18,9 @@ Registro = Regístrate
 agregar.indicador = Agregar indicador
 agregar.observacion = Agregar observación
 
+exportar.json = Exportar como archivo en formato Json
+exportar.xml = Exportar como archivo en formato XML
+
 Pais = País
 Indicador = Indicador
 Valor = Valor

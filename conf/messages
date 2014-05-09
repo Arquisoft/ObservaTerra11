@@ -18,6 +18,9 @@ Valor = Value
 agregar.indicador = Add indicador
 agregar.observacion = Add observation
 
+exportar.json = Export as file in Json format
+exportar.xml = Export as file in XML format
+
 Exportar = Export
 tugrupo = your profile is 
 
