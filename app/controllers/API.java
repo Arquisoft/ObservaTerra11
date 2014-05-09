@@ -157,7 +157,7 @@ public class API extends Controller {
 				DOMSource source = new DOMSource(doc);
 
 				String fichero = System.getProperty("user.dir")
-						+ "\\app\\controllers\\" + ind.code + ".xml";
+						+ "\\app\\xml\\" + ind.code + ".xml";
 
 				StreamResult result = new StreamResult(new File(fichero));
 
