@@ -10,3 +10,7 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.2")
 addSbtPlugin("com.typesafe.sbt" % "sbt-site" % "0.7.1")
 
 addSbtPlugin("de.johoop" % "jacoco4sbt" % "2.1.4")
+
+addSbtPlugin("templemore" % "sbt-cucumber-plugin" % "0.7.2")
+
+resolvers += "Templemore Repository" at "http://templemore.co.uk/repo"
